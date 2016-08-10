@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9F8BF1A81B7F1E83006D233A"
-               BuildableName = "Arcsecond Demo iOS.app"
+               BuildableName = "Arcsecond.temp_caseinsensitive_rename Demo macOS.app"
                BlueprintName = "Arcsecond Demo iOS"
-               ReferencedContainer = "container:arcsecond.xcodeproj">
+               ReferencedContainer = "container:Arcsecond.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "9F8BF1BE1B7F1E83006D233A"
                BuildableName = "Arcsecond DemoTests.xctest"
                BlueprintName = "Arcsecond DemoTests"
-               ReferencedContainer = "container:arcsecond.xcodeproj">
+               ReferencedContainer = "container:Arcsecond.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9F8BF1A81B7F1E83006D233A"
-            BuildableName = "Arcsecond Demo iOS.app"
+            BuildableName = "Arcsecond.temp_caseinsensitive_rename Demo macOS.app"
             BlueprintName = "Arcsecond Demo iOS"
-            ReferencedContainer = "container:arcsecond.xcodeproj">
+            ReferencedContainer = "container:Arcsecond.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9F8BF1A81B7F1E83006D233A"
-            BuildableName = "Arcsecond Demo iOS.app"
+            BuildableName = "Arcsecond.temp_caseinsensitive_rename Demo macOS.app"
             BlueprintName = "Arcsecond Demo iOS"
-            ReferencedContainer = "container:arcsecond.xcodeproj">
+            ReferencedContainer = "container:Arcsecond.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9F8BF1A81B7F1E83006D233A"
-            BuildableName = "Arcsecond Demo iOS.app"
+            BuildableName = "Arcsecond.temp_caseinsensitive_rename Demo macOS.app"
             BlueprintName = "Arcsecond Demo iOS"
-            ReferencedContainer = "container:arcsecond.xcodeproj">
+            ReferencedContainer = "container:Arcsecond.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

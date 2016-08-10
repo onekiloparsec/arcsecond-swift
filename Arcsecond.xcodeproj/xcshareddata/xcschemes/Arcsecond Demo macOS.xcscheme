@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9FBFE2621B79D12B00E98B40"
-               BuildableName = "arcsecond.framework"
-               BlueprintName = "arcsecond macOS"
-               ReferencedContainer = "container:arcsecond.xcodeproj">
+               BlueprintIdentifier = "9F0762A01D09F1BC00BEE18E"
+               BuildableName = "Arcsecond.temp_caseinsensitive_rename Demo macOS.app"
+               BlueprintName = "Arcsecond Demo macOS"
+               ReferencedContainer = "container:Arcsecond.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,24 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9FBFE26D1B79D12B00E98B40"
-               BuildableName = "arcsecondTests.xctest"
-               BlueprintName = "arcsecondTests"
-               ReferencedContainer = "container:arcsecond.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9FBFE2621B79D12B00E98B40"
-            BuildableName = "arcsecond.framework"
-            BlueprintName = "arcsecond macOS"
-            ReferencedContainer = "container:arcsecond.xcodeproj">
+            BlueprintIdentifier = "9F0762A01D09F1BC00BEE18E"
+            BuildableName = "Arcsecond.temp_caseinsensitive_rename Demo macOS.app"
+            BlueprintName = "Arcsecond Demo macOS"
+            ReferencedContainer = "container:Arcsecond.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -61,15 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9FBFE2621B79D12B00E98B40"
-            BuildableName = "arcsecond.framework"
-            BlueprintName = "arcsecond macOS"
-            ReferencedContainer = "container:arcsecond.xcodeproj">
+            BlueprintIdentifier = "9F0762A01D09F1BC00BEE18E"
+            BuildableName = "Arcsecond.temp_caseinsensitive_rename Demo macOS.app"
+            BlueprintName = "Arcsecond Demo macOS"
+            ReferencedContainer = "container:Arcsecond.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -79,15 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9FBFE2621B79D12B00E98B40"
-            BuildableName = "arcsecond.framework"
-            BlueprintName = "arcsecond macOS"
-            ReferencedContainer = "container:arcsecond.xcodeproj">
+            BlueprintIdentifier = "9F0762A01D09F1BC00BEE18E"
+            BuildableName = "Arcsecond.temp_caseinsensitive_rename Demo macOS.app"
+            BlueprintName = "Arcsecond Demo macOS"
+            ReferencedContainer = "container:Arcsecond.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

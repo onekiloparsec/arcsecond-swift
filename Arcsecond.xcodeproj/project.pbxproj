@@ -12,19 +12,22 @@
 		9F0762A61D09F1BC00BEE18E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0762A51D09F1BC00BEE18E /* ViewController.swift */; };
 		9F0762A81D09F1BC00BEE18E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F0762A71D09F1BC00BEE18E /* Assets.xcassets */; };
 		9F0762AB1D09F1BC00BEE18E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0762A91D09F1BC00BEE18E /* Main.storyboard */; };
-		9F0762B21D09F20700BEE18E /* arcsecond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* arcsecond.framework */; };
+		9F0762B21D09F20700BEE18E /* Arcsecond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */; };
 		9F0762B31D09F80C00BEE18E /* Siesta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F07629B1D09ED8300BEE18E /* Siesta.framework */; };
-		9F0762B51D09F82200BEE18E /* arcsecond.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* arcsecond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F0762B51D09F82200BEE18E /* Arcsecond.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F0762B61D09F82200BEE18E /* Siesta.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9F07629B1D09ED8300BEE18E /* Siesta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F6800221D5B519E009CF070 /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800211D5B519E009CF070 /* AstronomicalObject.swift */; };
+		9F6800241D5B5214009CF070 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800231D5B5214009CF070 /* Alias.swift */; };
+		9F6800261D5B5287009CF070 /* Exoplanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800251D5B5287009CF070 /* Exoplanet.swift */; };
 		9F8BF1AE1B7F1E83006D233A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BF1AD1B7F1E83006D233A /* AppDelegate.swift */; };
 		9F8BF1B01B7F1E83006D233A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BF1AF1B7F1E83006D233A /* MasterViewController.swift */; };
 		9F8BF1B21B7F1E83006D233A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BF1B11B7F1E83006D233A /* DetailViewController.swift */; };
 		9F8BF1B51B7F1E83006D233A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BF1B31B7F1E83006D233A /* Main.storyboard */; };
 		9F8BF1B71B7F1E83006D233A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BF1B61B7F1E83006D233A /* Images.xcassets */; };
 		9F8BF1BA1B7F1E83006D233A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BF1B81B7F1E83006D233A /* LaunchScreen.xib */; };
-		9F8BF1CF1B7F1FDC006D233A /* arcsecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BF1CE1B7F1FDC006D233A /* arcsecond.swift */; };
-		9FBFE2691B79D12B00E98B40 /* arcsecond.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FBFE2681B79D12B00E98B40 /* arcsecond.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9FBFE26F1B79D12B00E98B40 /* arcsecond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* arcsecond.framework */; };
+		9F8BF1CF1B7F1FDC006D233A /* Arcsecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BF1CE1B7F1FDC006D233A /* Arcsecond.swift */; };
+		9FBFE2691B79D12B00E98B40 /* Arcsecond.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FBFE2681B79D12B00E98B40 /* Arcsecond.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FBFE26F1B79D12B00E98B40 /* Arcsecond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */; };
 		9FBFE2761B79D12B00E98B40 /* arcsecondTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFE2751B79D12B00E98B40 /* arcsecondTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9F0762B51D09F82200BEE18E /* arcsecond.framework in Copy Frameworks */,
+				9F0762B51D09F82200BEE18E /* Arcsecond.framework in Copy Frameworks */,
 				9F0762B61D09F82200BEE18E /* Siesta.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -68,6 +71,9 @@
 		9F0762A71D09F1BC00BEE18E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F0762AA1D09F1BC00BEE18E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F0762AC1D09F1BC00BEE18E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F6800211D5B519E009CF070 /* AstronomicalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
+		9F6800231D5B5214009CF070 /* Alias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
+		9F6800251D5B5287009CF070 /* Exoplanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exoplanet.swift; sourceTree = "<group>"; };
 		9F8BF1A91B7F1E83006D233A /* Arcsecond Demo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arcsecond Demo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8BF1AC1B7F1E83006D233A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F8BF1AD1B7F1E83006D233A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,11 +82,11 @@
 		9F8BF1B41B7F1E83006D233A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F8BF1B61B7F1E83006D233A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9F8BF1B91B7F1E83006D233A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		9F8BF1CE1B7F1FDC006D233A /* arcsecond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arcsecond.swift; sourceTree = "<group>"; };
-		9FBFE2631B79D12B00E98B40 /* arcsecond.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = arcsecond.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F8BF1CE1B7F1FDC006D233A /* Arcsecond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arcsecond.swift; sourceTree = "<group>"; };
+		9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Arcsecond.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBFE2671B79D12B00E98B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FBFE2681B79D12B00E98B40 /* arcsecond.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arcsecond.h; sourceTree = "<group>"; };
-		9FBFE26E1B79D12B00E98B40 /* arcsecondTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arcsecondTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FBFE2681B79D12B00E98B40 /* Arcsecond.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Arcsecond.h; sourceTree = "<group>"; };
+		9FBFE26E1B79D12B00E98B40 /* ArcsecondTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcsecondTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBFE2741B79D12B00E98B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FBFE2751B79D12B00E98B40 /* arcsecondTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arcsecondTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,7 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F0762B31D09F80C00BEE18E /* Siesta.framework in Frameworks */,
-				9F0762B21D09F20700BEE18E /* arcsecond.framework in Frameworks */,
+				9F0762B21D09F20700BEE18E /* Arcsecond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FBFE26F1B79D12B00E98B40 /* arcsecond.framework in Frameworks */,
+				9FBFE26F1B79D12B00E98B40 /* Arcsecond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,8 +173,8 @@
 		9FBFE2591B79D12B00E98B40 = {
 			isa = PBXGroup;
 			children = (
-				9FBFE2651B79D12B00E98B40 /* arcsecond */,
-				9FBFE2721B79D12B00E98B40 /* arcsecondTests */,
+				9FBFE2651B79D12B00E98B40 /* Arcsecond */,
+				9FBFE2721B79D12B00E98B40 /* ArcsecondTests */,
 				9F0762A21D09F1BC00BEE18E /* Arcsecond Demo macOS */,
 				9F8BF1AA1B7F1E83006D233A /* Arcsecond Demo iOS */,
 				9FBFE2641B79D12B00E98B40 /* Products */,
@@ -179,21 +185,25 @@
 		9FBFE2641B79D12B00E98B40 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9FBFE2631B79D12B00E98B40 /* arcsecond.framework */,
-				9FBFE26E1B79D12B00E98B40 /* arcsecondTests.xctest */,
+				9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */,
+				9FBFE26E1B79D12B00E98B40 /* ArcsecondTests.xctest */,
 				9F8BF1A91B7F1E83006D233A /* Arcsecond Demo iOS.app */,
 				9F0762A11D09F1BC00BEE18E /* Arcsecond Demo macOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9FBFE2651B79D12B00E98B40 /* arcsecond */ = {
+		9FBFE2651B79D12B00E98B40 /* Arcsecond */ = {
 			isa = PBXGroup;
 			children = (
-				9FBFE2681B79D12B00E98B40 /* arcsecond.h */,
-				9F8BF1CE1B7F1FDC006D233A /* arcsecond.swift */,
+				9FBFE2681B79D12B00E98B40 /* Arcsecond.h */,
+				9F8BF1CE1B7F1FDC006D233A /* Arcsecond.swift */,
+				9F6800211D5B519E009CF070 /* AstronomicalObject.swift */,
+				9F6800231D5B5214009CF070 /* Alias.swift */,
+				9F6800251D5B5287009CF070 /* Exoplanet.swift */,
 				9FBFE2661B79D12B00E98B40 /* Supporting Files */,
 			);
+			name = Arcsecond;
 			path = arcsecond;
 			sourceTree = "<group>";
 		};
@@ -205,12 +215,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9FBFE2721B79D12B00E98B40 /* arcsecondTests */ = {
+		9FBFE2721B79D12B00E98B40 /* ArcsecondTests */ = {
 			isa = PBXGroup;
 			children = (
 				9FBFE2751B79D12B00E98B40 /* arcsecondTests.swift */,
 				9FBFE2731B79D12B00E98B40 /* Supporting Files */,
 			);
+			name = ArcsecondTests;
 			path = arcsecondTests;
 			sourceTree = "<group>";
 		};
@@ -229,7 +240,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FBFE2691B79D12B00E98B40 /* arcsecond.h in Headers */,
+				9FBFE2691B79D12B00E98B40 /* Arcsecond.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +283,9 @@
 			productReference = 9F8BF1A91B7F1E83006D233A /* Arcsecond Demo iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9FBFE2621B79D12B00E98B40 /* arcsecond macOS */ = {
+		9FBFE2621B79D12B00E98B40 /* Arcsecond macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9FBFE2791B79D12B00E98B40 /* Build configuration list for PBXNativeTarget "arcsecond macOS" */;
+			buildConfigurationList = 9FBFE2791B79D12B00E98B40 /* Build configuration list for PBXNativeTarget "Arcsecond macOS" */;
 			buildPhases = (
 				9FBFE25E1B79D12B00E98B40 /* Sources */,
 				9FBFE25F1B79D12B00E98B40 /* Frameworks */,
@@ -285,14 +296,14 @@
 			);
 			dependencies = (
 			);
-			name = "arcsecond macOS";
+			name = "Arcsecond macOS";
 			productName = arcsecond;
-			productReference = 9FBFE2631B79D12B00E98B40 /* arcsecond.framework */;
+			productReference = 9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9FBFE26D1B79D12B00E98B40 /* arcsecondTests */ = {
+		9FBFE26D1B79D12B00E98B40 /* ArcsecondTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9FBFE27C1B79D12B00E98B40 /* Build configuration list for PBXNativeTarget "arcsecondTests" */;
+			buildConfigurationList = 9FBFE27C1B79D12B00E98B40 /* Build configuration list for PBXNativeTarget "ArcsecondTests" */;
 			buildPhases = (
 				9FBFE26A1B79D12B00E98B40 /* Sources */,
 				9FBFE26B1B79D12B00E98B40 /* Frameworks */,
@@ -303,9 +314,9 @@
 			dependencies = (
 				9FBFE2711B79D12B00E98B40 /* PBXTargetDependency */,
 			);
-			name = arcsecondTests;
+			name = ArcsecondTests;
 			productName = arcsecondTests;
-			productReference = 9FBFE26E1B79D12B00E98B40 /* arcsecondTests.xctest */;
+			productReference = 9FBFE26E1B79D12B00E98B40 /* ArcsecondTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -332,7 +343,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9FBFE25D1B79D12B00E98B40 /* Build configuration list for PBXProject "arcsecond" */;
+			buildConfigurationList = 9FBFE25D1B79D12B00E98B40 /* Build configuration list for PBXProject "Arcsecond" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -345,8 +356,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9FBFE2621B79D12B00E98B40 /* arcsecond macOS */,
-				9FBFE26D1B79D12B00E98B40 /* arcsecondTests */,
+				9FBFE2621B79D12B00E98B40 /* Arcsecond macOS */,
+				9FBFE26D1B79D12B00E98B40 /* ArcsecondTests */,
 				9F0762A01D09F1BC00BEE18E /* Arcsecond Demo macOS */,
 				9F8BF1A81B7F1E83006D233A /* Arcsecond Demo iOS */,
 			);
@@ -413,7 +424,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F8BF1CF1B7F1FDC006D233A /* arcsecond.swift in Sources */,
+				9F6800221D5B519E009CF070 /* AstronomicalObject.swift in Sources */,
+				9F6800241D5B5214009CF070 /* Alias.swift in Sources */,
+				9F6800261D5B5287009CF070 /* Exoplanet.swift in Sources */,
+				9F8BF1CF1B7F1FDC006D233A /* Arcsecond.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,12 +444,12 @@
 /* Begin PBXTargetDependency section */
 		9F0762B11D09F20300BEE18E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9FBFE2621B79D12B00E98B40 /* arcsecond macOS */;
+			target = 9FBFE2621B79D12B00E98B40 /* Arcsecond macOS */;
 			targetProxy = 9F0762B01D09F20300BEE18E /* PBXContainerItemProxy */;
 		};
 		9FBFE2711B79D12B00E98B40 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9FBFE2621B79D12B00E98B40 /* arcsecond macOS */;
+			target = 9FBFE2621B79D12B00E98B40 /* Arcsecond macOS */;
 			targetProxy = 9FBFE2701B79D12B00E98B40 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -484,7 +498,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.Arcsecond-Demo-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Arcsecond Demo macOS";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -504,7 +518,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.Arcsecond-Demo-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Arcsecond Demo macOS";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -520,7 +534,7 @@
 				INFOPLIST_FILE = "Arcsecond Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Arcsecond Demo iOS";
 			};
 			name = Debug;
 		};
@@ -531,7 +545,7 @@
 				INFOPLIST_FILE = "Arcsecond Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Arcsecond Demo iOS";
 			};
 			name = Release;
 		};
@@ -642,7 +656,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = arcsecond;
+				PRODUCT_NAME = Arcsecond;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -666,7 +680,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = arcsecond;
+				PRODUCT_NAME = Arcsecond;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
@@ -714,6 +728,7 @@
 				9F0762AF1D09F1BC00BEE18E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F8BF1CB1B7F1E83006D233A /* Build configuration list for PBXNativeTarget "Arcsecond Demo iOS" */ = {
 			isa = XCConfigurationList;
@@ -724,7 +739,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9FBFE25D1B79D12B00E98B40 /* Build configuration list for PBXProject "arcsecond" */ = {
+		9FBFE25D1B79D12B00E98B40 /* Build configuration list for PBXProject "Arcsecond" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9FBFE2771B79D12B00E98B40 /* Debug */,
@@ -733,7 +748,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9FBFE2791B79D12B00E98B40 /* Build configuration list for PBXNativeTarget "arcsecond macOS" */ = {
+		9FBFE2791B79D12B00E98B40 /* Build configuration list for PBXNativeTarget "Arcsecond macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9FBFE27A1B79D12B00E98B40 /* Debug */,
@@ -742,7 +757,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9FBFE27C1B79D12B00E98B40 /* Build configuration list for PBXNativeTarget "arcsecondTests" */ = {
+		9FBFE27C1B79D12B00E98B40 /* Build configuration list for PBXNativeTarget "ArcsecondTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9FBFE27D1B79D12B00E98B40 /* Debug */,
