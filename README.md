@@ -7,7 +7,7 @@
 <a href="https://github.com/onekiloparsec/QLFits">QLFits</a>
 </p>
 
-arcsecond.sdk.swift
+arcsecond.swift
 ===================
 
 The Swift SDK to consume the REST API of arcsecond.io
