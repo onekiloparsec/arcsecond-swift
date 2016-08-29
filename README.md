@@ -4,7 +4,8 @@
 <p align="center">
 <a href="https://github.com/onekiloparsec/arcsecond.io">arcsecond.io</a> (Swift SDK) &bull;
 <a href="https://github.com/onekiloparsec/SwiftAA">SwiftAA</a> &bull;
-<a href="https://github.com/onekiloparsec/QLFits">QLFits</a>
+<a href="https://github.com/onekiloparsec/QLFits">QLFits</a> &bull;
+<a href="https://github.com/onekiloparsec/FITSImporter">FITSImporter</a>
 </p>
 
 arcsecond.swift
