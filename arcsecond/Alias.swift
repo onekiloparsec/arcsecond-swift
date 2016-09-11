@@ -7,15 +7,20 @@
 //
 
 import Foundation
+import Argo
+import Curry
+import Runes
 
-public class Alias {
+public struct Alias {
     public let name: String
-    public let catalogueURL: NSURL?
-    public weak private(set) var parentObject: AstronomicalObject!
-    
-    init(json: [String : String], parentObject: AstronomicalObject) {
-        self.name = json["name"]!
-        self.catalogueURL = (json["catalogue_url"] != nil) ? NSURL(string: json["catalogue_url"]!) : nil
-        self.parentObject = parentObject
+    public let catalogueURL: String?
+}
+
+extension Alias: Decodable {
+    public static func decode(j: JSON) -> Decoded<Alias> {
+        return curry(Alias.init)
+            <^> j <| "name"
+            <*> j <|? "catalogue_url"
     }
 }
+

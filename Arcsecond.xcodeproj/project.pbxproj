@@ -16,6 +16,15 @@
 		9F0762B31D09F80C00BEE18E /* Siesta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F07629B1D09ED8300BEE18E /* Siesta.framework */; };
 		9F0762B51D09F82200BEE18E /* Arcsecond.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F0762B61D09F82200BEE18E /* Siesta.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9F07629B1D09ED8300BEE18E /* Siesta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F0EFE281D8006810099D14A /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE251D8006810099D14A /* Argo.framework */; };
+		9F0EFE291D8006810099D14A /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE261D8006810099D14A /* Curry.framework */; };
+		9F0EFE2A1D8006810099D14A /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE271D8006810099D14A /* Runes.framework */; };
+		9F0EFE311D8006CE0099D14A /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE251D8006810099D14A /* Argo.framework */; };
+		9F0EFE321D8006CE0099D14A /* Argo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE251D8006810099D14A /* Argo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F0EFE331D8006CE0099D14A /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE261D8006810099D14A /* Curry.framework */; };
+		9F0EFE341D8006CE0099D14A /* Curry.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE261D8006810099D14A /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F0EFE351D8006CE0099D14A /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE271D8006810099D14A /* Runes.framework */; };
+		9F0EFE361D8006CE0099D14A /* Runes.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE271D8006810099D14A /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F6800221D5B519E009CF070 /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800211D5B519E009CF070 /* AstronomicalObject.swift */; };
 		9F6800241D5B5214009CF070 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800231D5B5214009CF070 /* Alias.swift */; };
 		9F6800261D5B5287009CF070 /* Exoplanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800251D5B5287009CF070 /* Exoplanet.swift */; };
@@ -26,7 +35,11 @@
 		9F8BF1B71B7F1E83006D233A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BF1B61B7F1E83006D233A /* Images.xcassets */; };
 		9F8BF1BA1B7F1E83006D233A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BF1B81B7F1E83006D233A /* LaunchScreen.xib */; };
 		9F8BF1CF1B7F1FDC006D233A /* Arcsecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BF1CE1B7F1FDC006D233A /* Arcsecond.swift */; };
-		9FBFE2691B79D12B00E98B40 /* Arcsecond.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FBFE2681B79D12B00E98B40 /* Arcsecond.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FACBD6B1D8536D1003F97F9 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */; };
+		9FACBD6C1D8536D9003F97F9 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */; };
+		9FACBD6D1D8536D9003F97F9 /* PromiseKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FACBD6F1D8560B6003F97F9 /* ArcsecondService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FACBD6E1D8560B6003F97F9 /* ArcsecondService.swift */; };
+		9FACBD711D8560E7003F97F9 /* Telegram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FACBD701D8560E7003F97F9 /* Telegram.swift */; };
 		9FBFE26F1B79D12B00E98B40 /* Arcsecond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */; };
 		9FBFE2761B79D12B00E98B40 /* arcsecondTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFE2751B79D12B00E98B40 /* arcsecondTests.swift */; };
 /* End PBXBuildFile section */
@@ -55,8 +68,22 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9F0EFE341D8006CE0099D14A /* Curry.framework in Copy Frameworks */,
 				9F0762B51D09F82200BEE18E /* Arcsecond.framework in Copy Frameworks */,
 				9F0762B61D09F82200BEE18E /* Siesta.framework in Copy Frameworks */,
+				9FACBD6D1D8536D9003F97F9 /* PromiseKit.framework in Copy Frameworks */,
+				9F0EFE361D8006CE0099D14A /* Runes.framework in Copy Frameworks */,
+				9F0EFE321D8006CE0099D14A /* Argo.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F0EFE2B1D8006990099D14A /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +98,9 @@
 		9F0762A71D09F1BC00BEE18E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F0762AA1D09F1BC00BEE18E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F0762AC1D09F1BC00BEE18E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F0EFE251D8006810099D14A /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/Mac/Argo.framework; sourceTree = "<group>"; };
+		9F0EFE261D8006810099D14A /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/Mac/Curry.framework; sourceTree = "<group>"; };
+		9F0EFE271D8006810099D14A /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/Mac/Runes.framework; sourceTree = "<group>"; };
 		9F6800211D5B519E009CF070 /* AstronomicalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
 		9F6800231D5B5214009CF070 /* Alias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
 		9F6800251D5B5287009CF070 /* Exoplanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exoplanet.swift; sourceTree = "<group>"; };
@@ -83,6 +113,9 @@
 		9F8BF1B61B7F1E83006D233A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9F8BF1B91B7F1E83006D233A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9F8BF1CE1B7F1FDC006D233A /* Arcsecond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arcsecond.swift; sourceTree = "<group>"; };
+		9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
+		9FACBD6E1D8560B6003F97F9 /* ArcsecondService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcsecondService.swift; sourceTree = "<group>"; };
+		9FACBD701D8560E7003F97F9 /* Telegram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Telegram.swift; sourceTree = "<group>"; };
 		9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Arcsecond.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBFE2671B79D12B00E98B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FBFE2681B79D12B00E98B40 /* Arcsecond.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Arcsecond.h; sourceTree = "<group>"; };
@@ -96,8 +129,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F0EFE331D8006CE0099D14A /* Curry.framework in Frameworks */,
 				9F0762B31D09F80C00BEE18E /* Siesta.framework in Frameworks */,
 				9F0762B21D09F20700BEE18E /* Arcsecond.framework in Frameworks */,
+				9FACBD6C1D8536D9003F97F9 /* PromiseKit.framework in Frameworks */,
+				9F0EFE351D8006CE0099D14A /* Runes.framework in Frameworks */,
+				9F0EFE311D8006CE0099D14A /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +149,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FACBD6B1D8536D1003F97F9 /* PromiseKit.framework in Frameworks */,
+				9F0EFE281D8006810099D14A /* Argo.framework in Frameworks */,
+				9F0EFE291D8006810099D14A /* Curry.framework in Frameworks */,
+				9F0EFE2A1D8006810099D14A /* Runes.framework in Frameworks */,
 				9F07629C1D09ED8300BEE18E /* Siesta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +171,10 @@
 		952E6F10C33274A6B41DFC89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */,
+				9F0EFE251D8006810099D14A /* Argo.framework */,
+				9F0EFE261D8006810099D14A /* Curry.framework */,
+				9F0EFE271D8006810099D14A /* Runes.framework */,
 				9F07629B1D09ED8300BEE18E /* Siesta.framework */,
 			);
 			name = Frameworks;
@@ -196,11 +241,12 @@
 		9FBFE2651B79D12B00E98B40 /* Arcsecond */ = {
 			isa = PBXGroup;
 			children = (
-				9FBFE2681B79D12B00E98B40 /* Arcsecond.h */,
 				9F8BF1CE1B7F1FDC006D233A /* Arcsecond.swift */,
+				9FACBD6E1D8560B6003F97F9 /* ArcsecondService.swift */,
 				9F6800211D5B519E009CF070 /* AstronomicalObject.swift */,
 				9F6800231D5B5214009CF070 /* Alias.swift */,
 				9F6800251D5B5287009CF070 /* Exoplanet.swift */,
+				9FACBD701D8560E7003F97F9 /* Telegram.swift */,
 				9FBFE2661B79D12B00E98B40 /* Supporting Files */,
 			);
 			name = Arcsecond;
@@ -210,6 +256,7 @@
 		9FBFE2661B79D12B00E98B40 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9FBFE2681B79D12B00E98B40 /* Arcsecond.h */,
 				9FBFE2671B79D12B00E98B40 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -240,7 +287,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FBFE2691B79D12B00E98B40 /* Arcsecond.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,20 +329,21 @@
 			productReference = 9F8BF1A91B7F1E83006D233A /* Arcsecond Demo iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9FBFE2621B79D12B00E98B40 /* Arcsecond macOS */ = {
+		9FBFE2621B79D12B00E98B40 /* Arcsecond-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9FBFE2791B79D12B00E98B40 /* Build configuration list for PBXNativeTarget "Arcsecond macOS" */;
+			buildConfigurationList = 9FBFE2791B79D12B00E98B40 /* Build configuration list for PBXNativeTarget "Arcsecond-macOS" */;
 			buildPhases = (
 				9FBFE25E1B79D12B00E98B40 /* Sources */,
 				9FBFE25F1B79D12B00E98B40 /* Frameworks */,
 				9FBFE2601B79D12B00E98B40 /* Headers */,
 				9FBFE2611B79D12B00E98B40 /* Resources */,
+				9F0EFE2B1D8006990099D14A /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Arcsecond macOS";
+			name = "Arcsecond-macOS";
 			productName = arcsecond;
 			productReference = 9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */;
 			productType = "com.apple.product-type.framework";
@@ -356,7 +403,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9FBFE2621B79D12B00E98B40 /* Arcsecond macOS */,
+				9FBFE2621B79D12B00E98B40 /* Arcsecond-macOS */,
 				9FBFE26D1B79D12B00E98B40 /* ArcsecondTests */,
 				9F0762A01D09F1BC00BEE18E /* Arcsecond Demo macOS */,
 				9F8BF1A81B7F1E83006D233A /* Arcsecond Demo iOS */,
@@ -426,6 +473,8 @@
 			files = (
 				9F6800221D5B519E009CF070 /* AstronomicalObject.swift in Sources */,
 				9F6800241D5B5214009CF070 /* Alias.swift in Sources */,
+				9FACBD711D8560E7003F97F9 /* Telegram.swift in Sources */,
+				9FACBD6F1D8560B6003F97F9 /* ArcsecondService.swift in Sources */,
 				9F6800261D5B5287009CF070 /* Exoplanet.swift in Sources */,
 				9F8BF1CF1B7F1FDC006D233A /* Arcsecond.swift in Sources */,
 			);
@@ -444,12 +493,12 @@
 /* Begin PBXTargetDependency section */
 		9F0762B11D09F20300BEE18E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9FBFE2621B79D12B00E98B40 /* Arcsecond macOS */;
+			target = 9FBFE2621B79D12B00E98B40 /* Arcsecond-macOS */;
 			targetProxy = 9F0762B01D09F20300BEE18E /* PBXContainerItemProxy */;
 		};
 		9FBFE2711B79D12B00E98B40 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9FBFE2621B79D12B00E98B40 /* Arcsecond macOS */;
+			target = 9FBFE2621B79D12B00E98B40 /* Arcsecond-macOS */;
 			targetProxy = 9FBFE2701B79D12B00E98B40 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -748,7 +797,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9FBFE2791B79D12B00E98B40 /* Build configuration list for PBXNativeTarget "Arcsecond macOS" */ = {
+		9FBFE2791B79D12B00E98B40 /* Build configuration list for PBXNativeTarget "Arcsecond-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9FBFE27A1B79D12B00E98B40 /* Debug */,

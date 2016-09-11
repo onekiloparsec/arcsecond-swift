@@ -7,7 +7,18 @@
 //
 
 import Foundation
+import Argo
+import Curry
 
-public class Exoplanet {
-    
+public struct Exoplanet {
+    public let name: String
 }
+
+extension Exoplanet: Decodable {
+    public static func decode(json: JSON) -> Decoded<Exoplanet> {
+        return curry(Exoplanet.init)
+            <^> json <| "name"
+    }
+}
+
+

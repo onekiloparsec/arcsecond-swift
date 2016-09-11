@@ -1,2 +1,6 @@
+github "thoughtbot/Argo" "v3.1.0"
+github "thoughtbot/Curry" "v2.3.3"
+github "mxcl/PromiseKit" "3.5.1"
+github "thoughtbot/Runes" "v3.2.1"
 github "realm/realm-cocoa" "v1.0.2"
-github "bustoutsolutions/siesta" "1.0-beta.8"
+github "bustoutsolutions/siesta" "1.0-beta.10"

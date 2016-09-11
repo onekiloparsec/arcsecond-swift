@@ -7,16 +7,18 @@
 //
 
 import Foundation
+import Argo
+import Curry
 
-public class AstronomicalObject {
+public struct AstronomicalObject {
     public let name: String
-    public let aliases: [Alias]
-    
-    init(json: [String: AnyObject]) {
-        self.name = json["name"] as! String
-        let aliases = json["aliases"] as? [[String: String]]
-        self.aliases = aliases.map({ (json) -> Alias in
-            return Alias(json: json, parentObject: self)
-        })
+}
+
+extension AstronomicalObject: Decodable {
+    public static func decode(json: JSON) -> Decoded<AstronomicalObject> {
+        return curry(AstronomicalObject.init)
+            <^> json <| "name"
     }
 }
+
+
