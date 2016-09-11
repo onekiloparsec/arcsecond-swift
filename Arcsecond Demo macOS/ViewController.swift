@@ -8,8 +8,6 @@
 
 import Cocoa
 import Arcsecond
-import Siesta
-import PromiseKit
 
 class ViewController: NSViewController {
     @IBOutlet weak var nameLabel, favoriteColorLabel: NSTextField!
