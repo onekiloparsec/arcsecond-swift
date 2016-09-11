@@ -40,25 +40,31 @@ public class ArcsecondService : Service {
     
     public func object(name: String) -> Promise<AstronomicalObject> {
         return Promise { fulfill, reject in
-            self.resource("/\(self.APIVersion)/objects/\(name)").load()
-                .onSuccess { data in
-                    fulfill(data.content as! AstronomicalObject)
+            let resource = self.resource("/\(self.APIVersion)/objects/\(name)")
+            resource.addObserver(owner: self) { resource, event in
+                if case .NewData = event {
+                    fulfill(resource.latestData!.content as! AstronomicalObject)
                 }
-                .onFailure { error in
-                    reject(error)
+                else if case .Error = event {
+                    reject(resource.latestError!)
+                }
             }
+            resource.loadIfNeeded()
         }
     }
     
     public func exoplanet(name: String) -> Promise<Exoplanet> {
         return Promise { fulfill, reject in
-            self.exoplanets.child(name).load()
-                .onSuccess { data in
-                    fulfill(data.content as! Exoplanet)
+            let resource = self.exoplanets.child(name)
+            resource.addObserver(owner: self) { resource, event in
+                if case .NewData = event {
+                    fulfill(resource.latestData!.content as! Exoplanet)
                 }
-                .onFailure { error in
-                    reject(error)
+                else if case .Error = event {
+                    reject(resource.latestError!)
+                }
             }
+            resource.loadIfNeeded()            
         }
     }
     
