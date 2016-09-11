@@ -67,19 +67,4 @@ public class ArcsecondService : Service {
             resource.loadIfNeeded()            
         }
     }
-    
-//    public func observingSite(name: String) -> Resource {
-//        return self.observingSites.child(name)
-//    }
-//    
-//    public func telegrams(ofType telType: TelegramType) -> Resource {
-//        switch telType {
-//        case .ATel:
-//            return self.resource("/\(self.APIVersion)/telegrams/ATel")
-//        }
-//    }
-//    
-//    public func telegram(ofType telType: TelegramType, withIdentifier identifier: String) -> Resource {
-//        return self.telegrams(ofType: telType).child(identifier)
-//    }
 }
