@@ -12,12 +12,18 @@ import Curry
 
 public struct AstronomicalObject {
     public let name: String
+    public let coordinates: Coordinates
+    public let aliases: [Alias]
+    public let fluxes: [Flux]
 }
 
 extension AstronomicalObject: Decodable {
     public static func decode(json: JSON) -> Decoded<AstronomicalObject> {
         return curry(AstronomicalObject.init)
             <^> json <| "name"
+            <*> json <| "coordinates"
+            <*> json <|| "aliases"
+            <*> json <|| "fluxes"
     }
 }
 

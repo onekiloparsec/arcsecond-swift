@@ -9,18 +9,17 @@
 import Foundation
 import Argo
 import Curry
-import Runes
 
 public struct Alias {
     public let name: String
-    public let catalogueURL: String?
+    public let catalogueURL: String
 }
 
 extension Alias: Decodable {
-    public static func decode(j: JSON) -> Decoded<Alias> {
+    public static func decode(json: JSON) -> Decoded<Alias> {
         return curry(Alias.init)
-            <^> j <| "name"
-            <*> j <|? "catalogue_url"
+            <^> json <| "name"
+            <*> json <| "catalogue_url"
     }
 }
 

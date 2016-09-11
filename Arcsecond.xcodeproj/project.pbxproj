@@ -35,6 +35,8 @@
 		9F8BF1B71B7F1E83006D233A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BF1B61B7F1E83006D233A /* Images.xcassets */; };
 		9F8BF1BA1B7F1E83006D233A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BF1B81B7F1E83006D233A /* LaunchScreen.xib */; };
 		9F8BF1CF1B7F1FDC006D233A /* Arcsecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BF1CE1B7F1FDC006D233A /* Arcsecond.swift */; };
+		9F9896011D85E73300060502 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9896001D85E73300060502 /* Coordinates.swift */; };
+		9F9896031D85EA8600060502 /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9896021D85EA8600060502 /* Flux.swift */; };
 		9FACBD6B1D8536D1003F97F9 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */; };
 		9FACBD6C1D8536D9003F97F9 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */; };
 		9FACBD6D1D8536D9003F97F9 /* PromiseKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -113,6 +115,8 @@
 		9F8BF1B61B7F1E83006D233A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9F8BF1B91B7F1E83006D233A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9F8BF1CE1B7F1FDC006D233A /* Arcsecond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arcsecond.swift; sourceTree = "<group>"; };
+		9F9896001D85E73300060502 /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		9F9896021D85EA8600060502 /* Flux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flux.swift; sourceTree = "<group>"; };
 		9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
 		9FACBD6E1D8560B6003F97F9 /* ArcsecondService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcsecondService.swift; sourceTree = "<group>"; };
 		9FACBD701D8560E7003F97F9 /* Telegram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Telegram.swift; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 				9FACBD6E1D8560B6003F97F9 /* ArcsecondService.swift */,
 				9F6800211D5B519E009CF070 /* AstronomicalObject.swift */,
 				9F6800231D5B5214009CF070 /* Alias.swift */,
+				9F9896001D85E73300060502 /* Coordinates.swift */,
+				9F9896021D85EA8600060502 /* Flux.swift */,
 				9F6800251D5B5287009CF070 /* Exoplanet.swift */,
 				9FACBD701D8560E7003F97F9 /* Telegram.swift */,
 				9FBFE2661B79D12B00E98B40 /* Supporting Files */,
@@ -473,7 +479,9 @@
 			files = (
 				9F6800221D5B519E009CF070 /* AstronomicalObject.swift in Sources */,
 				9F6800241D5B5214009CF070 /* Alias.swift in Sources */,
+				9F9896011D85E73300060502 /* Coordinates.swift in Sources */,
 				9FACBD711D8560E7003F97F9 /* Telegram.swift in Sources */,
+				9F9896031D85EA8600060502 /* Flux.swift in Sources */,
 				9FACBD6F1D8560B6003F97F9 /* ArcsecondService.swift in Sources */,
 				9F6800261D5B5287009CF070 /* Exoplanet.swift in Sources */,
 				9F8BF1CF1B7F1FDC006D233A /* Arcsecond.swift in Sources */,
