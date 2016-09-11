@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9F8BF1A81B7F1E83006D233A"
-               BuildableName = "Arcsecond.temp_caseinsensitive_rename Demo macOS.app"
+               BuildableName = "Arcsecond Demo iOS.app"
                BlueprintName = "Arcsecond Demo iOS"
                ReferencedContainer = "container:Arcsecond.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9F8BF1A81B7F1E83006D233A"
-            BuildableName = "Arcsecond.temp_caseinsensitive_rename Demo macOS.app"
+            BuildableName = "Arcsecond Demo iOS.app"
             BlueprintName = "Arcsecond Demo iOS"
             ReferencedContainer = "container:Arcsecond.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9F8BF1A81B7F1E83006D233A"
-            BuildableName = "Arcsecond.temp_caseinsensitive_rename Demo macOS.app"
+            BuildableName = "Arcsecond Demo iOS.app"
             BlueprintName = "Arcsecond Demo iOS"
             ReferencedContainer = "container:Arcsecond.xcodeproj">
          </BuildableReference>
@@ -85,7 +85,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9F8BF1A81B7F1E83006D233A"
-            BuildableName = "Arcsecond.temp_caseinsensitive_rename Demo macOS.app"
+            BuildableName = "Arcsecond Demo iOS.app"
             BlueprintName = "Arcsecond Demo iOS"
             ReferencedContainer = "container:Arcsecond.xcodeproj">
          </BuildableReference>
