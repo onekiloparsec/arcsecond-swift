@@ -8,7 +8,6 @@
 
 import Foundation
 import Siesta
-import Argo
 import PromiseKit
 
 public class ArcsecondService : Service {
@@ -24,28 +23,26 @@ public class ArcsecondService : Service {
         super.init(baseURL: "http://api.arcsecond.io")
         
         self.configure {
-            $0.config.expirationTime = 86400.0  // default is 30 seconds
+            $0.expirationTime = 86400.0  // default is 30 seconds
         }
         
         self.configureTransformer("/\(self.APIVersion)/objects/*") {
-            (content: NSDictionary, _) -> AstronomicalObject? in
-            decode(content)
+            try AstronomicalObject(json: $0.content)
         }
         
         self.configureTransformer("/\(self.APIVersion)/exoplanets/*") {
-            (content: NSData, _) -> Exoplanet? in
-            decode(content)
+            try Exoplanet(json: $0.content)
         }
     }
     
-    public func object(name: String) -> Promise<AstronomicalObject> {
+    public func object(_ name: String) -> Promise<AstronomicalObject> {
         return Promise { fulfill, reject in
             let resource = self.resource("/\(self.APIVersion)/objects/\(name)")
             resource.addObserver(owner: self) { resource, event in
-                if case .NewData = event {
+                if case .newData = event {
                     fulfill(resource.latestData!.content as! AstronomicalObject)
                 }
-                else if case .Error = event {
+                else if case .error = event {
                     reject(resource.latestError!)
                 }
             }
@@ -53,14 +50,14 @@ public class ArcsecondService : Service {
         }
     }
     
-    public func exoplanet(name: String) -> Promise<Exoplanet> {
+    public func exoplanet(_ name: String) -> Promise<Exoplanet> {
         return Promise { fulfill, reject in
             let resource = self.exoplanets.child(name)
             resource.addObserver(owner: self) { resource, event in
-                if case .NewData = event {
+                if case .newData = event {
                     fulfill(resource.latestData!.content as! Exoplanet)
                 }
-                else if case .Error = event {
+                else if case .error = event {
                     reject(resource.latestError!)
                 }
             }

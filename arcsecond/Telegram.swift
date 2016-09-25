@@ -9,5 +9,5 @@
 import Foundation
 
 public enum TelegramType {
-    case ATel
+    case aTel
 }

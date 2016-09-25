@@ -7,18 +7,20 @@
 //
 
 import Foundation
-import Argo
-import Curry
 
 public struct Exoplanet {
     public let name: String
-}
 
-extension Exoplanet: Decodable {
-    public static func decode(json: JSON) -> Decoded<Exoplanet> {
-        return curry(Exoplanet.init)
-            <^> json <| "name"
+    init?(json: [String: Any]?) throws {
+        guard let aname = json?["name"] as? String else {
+            throw SerializationError.missing("name")
+        }
+        
+        self.name = aname
+        
+        //        guard case self.coordinates = Coordinates(json: json?["coordinates"] as? [String: Any]) else {
+        //            throw SerializationError.missing("coordinates")
+        //        }
     }
 }
-
 

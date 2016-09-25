@@ -16,18 +16,10 @@
 		9F0762B31D09F80C00BEE18E /* Siesta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F07629B1D09ED8300BEE18E /* Siesta.framework */; };
 		9F0762B51D09F82200BEE18E /* Arcsecond.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F0762B61D09F82200BEE18E /* Siesta.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9F07629B1D09ED8300BEE18E /* Siesta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9F0EFE281D8006810099D14A /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE251D8006810099D14A /* Argo.framework */; };
-		9F0EFE291D8006810099D14A /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE261D8006810099D14A /* Curry.framework */; };
-		9F0EFE2A1D8006810099D14A /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE271D8006810099D14A /* Runes.framework */; };
-		9F0EFE311D8006CE0099D14A /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE251D8006810099D14A /* Argo.framework */; };
-		9F0EFE321D8006CE0099D14A /* Argo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE251D8006810099D14A /* Argo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9F0EFE331D8006CE0099D14A /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE261D8006810099D14A /* Curry.framework */; };
-		9F0EFE341D8006CE0099D14A /* Curry.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE261D8006810099D14A /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9F0EFE351D8006CE0099D14A /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE271D8006810099D14A /* Runes.framework */; };
-		9F0EFE361D8006CE0099D14A /* Runes.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0EFE271D8006810099D14A /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F6800221D5B519E009CF070 /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800211D5B519E009CF070 /* AstronomicalObject.swift */; };
 		9F6800241D5B5214009CF070 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800231D5B5214009CF070 /* Alias.swift */; };
 		9F6800261D5B5287009CF070 /* Exoplanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800251D5B5287009CF070 /* Exoplanet.swift */; };
+		9F6CEAC01D8D56B000D00056 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CEABF1D8D56B000D00056 /* Constants.swift */; };
 		9F8BF1AE1B7F1E83006D233A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BF1AD1B7F1E83006D233A /* AppDelegate.swift */; };
 		9F8BF1B01B7F1E83006D233A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BF1AF1B7F1E83006D233A /* MasterViewController.swift */; };
 		9F8BF1B21B7F1E83006D233A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BF1B11B7F1E83006D233A /* DetailViewController.swift */; };
@@ -70,12 +62,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9F0EFE341D8006CE0099D14A /* Curry.framework in Copy Frameworks */,
 				9F0762B51D09F82200BEE18E /* Arcsecond.framework in Copy Frameworks */,
 				9F0762B61D09F82200BEE18E /* Siesta.framework in Copy Frameworks */,
 				9FACBD6D1D8536D9003F97F9 /* PromiseKit.framework in Copy Frameworks */,
-				9F0EFE361D8006CE0099D14A /* Runes.framework in Copy Frameworks */,
-				9F0EFE321D8006CE0099D14A /* Argo.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +95,7 @@
 		9F6800211D5B519E009CF070 /* AstronomicalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
 		9F6800231D5B5214009CF070 /* Alias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
 		9F6800251D5B5287009CF070 /* Exoplanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exoplanet.swift; sourceTree = "<group>"; };
+		9F6CEABF1D8D56B000D00056 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F8BF1A91B7F1E83006D233A /* Arcsecond Demo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arcsecond Demo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8BF1AC1B7F1E83006D233A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F8BF1AD1B7F1E83006D233A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,12 +123,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F0EFE331D8006CE0099D14A /* Curry.framework in Frameworks */,
 				9F0762B31D09F80C00BEE18E /* Siesta.framework in Frameworks */,
 				9F0762B21D09F20700BEE18E /* Arcsecond.framework in Frameworks */,
 				9FACBD6C1D8536D9003F97F9 /* PromiseKit.framework in Frameworks */,
-				9F0EFE351D8006CE0099D14A /* Runes.framework in Frameworks */,
-				9F0EFE311D8006CE0099D14A /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,9 +141,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FACBD6B1D8536D1003F97F9 /* PromiseKit.framework in Frameworks */,
-				9F0EFE281D8006810099D14A /* Argo.framework in Frameworks */,
-				9F0EFE291D8006810099D14A /* Curry.framework in Frameworks */,
-				9F0EFE2A1D8006810099D14A /* Runes.framework in Frameworks */,
 				9F07629C1D09ED8300BEE18E /* Siesta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +237,7 @@
 				9F9896021D85EA8600060502 /* Flux.swift */,
 				9F6800251D5B5287009CF070 /* Exoplanet.swift */,
 				9FACBD701D8560E7003F97F9 /* Telegram.swift */,
+				9F6CEABF1D8D56B000D00056 /* Constants.swift */,
 				9FBFE2661B79D12B00E98B40 /* Supporting Files */,
 			);
 			name = Arcsecond;
@@ -379,17 +364,20 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = onekiloparsec;
 				TargetAttributes = {
 					9F0762A01D09F1BC00BEE18E = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					9F8BF1A81B7F1E83006D233A = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = MD266WQ2E2;
 					};
 					9FBFE2621B79D12B00E98B40 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 					9FBFE26D1B79D12B00E98B40 = {
 						CreatedOnToolsVersion = 6.4;
@@ -485,6 +473,7 @@
 				9FACBD6F1D8560B6003F97F9 /* ArcsecondService.swift in Sources */,
 				9F6800261D5B5287009CF070 /* Exoplanet.swift in Sources */,
 				9F8BF1CF1B7F1FDC006D233A /* Arcsecond.swift in Sources */,
+				9F6CEAC01D8D56B000D00056 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +546,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.Arcsecond-Demo-macOS";
 				PRODUCT_NAME = "Arcsecond Demo macOS";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -577,6 +567,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.Arcsecond-Demo-macOS";
 				PRODUCT_NAME = "Arcsecond Demo macOS";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -584,6 +575,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MD266WQ2E2;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -599,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MD266WQ2E2;
 				INFOPLIST_FILE = "Arcsecond Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.$(PRODUCT_NAME:rfc1034identifier)";
@@ -619,8 +612,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -668,8 +663,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -689,6 +686,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -712,11 +710,13 @@
 				INFOPLIST_FILE = arcsecond/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Arcsecond;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -736,10 +736,12 @@
 				INFOPLIST_FILE = arcsecond/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Arcsecond;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

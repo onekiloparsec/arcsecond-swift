@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Argo
-import Curry
 
 public struct Flux {
     public let name: String
@@ -16,16 +14,5 @@ public struct Flux {
     public let errorMax: Double
     public let errorMin: Double
     public let bibcode: String
-}
-
-extension Flux: Decodable {
-    public static func decode(json: JSON) -> Decoded<Flux> {
-        return curry(Flux.init)
-            <^> json <| "name"
-            <*> json <| "value"
-            <*> json <| "error_max"
-            <*> json <| "error_min"
-            <*> json <| "bibcode"
-    }
 }
 

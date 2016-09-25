@@ -9,11 +9,11 @@
 import Foundation
 import PromiseKit
 
-public func object(name: String) -> Promise<AstronomicalObject> {
+public func object(_ name: String) -> Promise<AstronomicalObject> {
     return ArcsecondService.sharedDefault.object(name)
 }
 
-public func exoplanet(name: String) -> Promise<Exoplanet> {
+public func exoplanet(_ name: String) -> Promise<Exoplanet> {
     return ArcsecondService.sharedDefault.exoplanet(name)
 }
 
