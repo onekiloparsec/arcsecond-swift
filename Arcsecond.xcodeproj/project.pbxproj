@@ -89,9 +89,6 @@
 		9F0762A71D09F1BC00BEE18E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F0762AA1D09F1BC00BEE18E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F0762AC1D09F1BC00BEE18E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F0EFE251D8006810099D14A /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/Mac/Argo.framework; sourceTree = "<group>"; };
-		9F0EFE261D8006810099D14A /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/Mac/Curry.framework; sourceTree = "<group>"; };
-		9F0EFE271D8006810099D14A /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/Mac/Runes.framework; sourceTree = "<group>"; };
 		9F6800211D5B519E009CF070 /* AstronomicalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
 		9F6800231D5B5214009CF070 /* Alias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
 		9F6800251D5B5287009CF070 /* Exoplanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exoplanet.swift; sourceTree = "<group>"; };
@@ -160,9 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */,
-				9F0EFE251D8006810099D14A /* Argo.framework */,
-				9F0EFE261D8006810099D14A /* Curry.framework */,
-				9F0EFE271D8006810099D14A /* Runes.framework */,
 				9F07629B1D09ED8300BEE18E /* Siesta.framework */,
 			);
 			name = Frameworks;
@@ -584,6 +578,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Arcsecond Demo iOS";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -596,6 +591,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Arcsecond Demo iOS";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -760,6 +756,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -774,6 +771,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
