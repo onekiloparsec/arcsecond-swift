@@ -11,11 +11,12 @@ import Foundation
 public struct Flux {
     public let name: String
     public let value: Double
-    public let errorMax: Double
-    public let errorMin: Double
     public let bibcode: String
+
+    private(set) public var errorMax: Double? = nil
+    private(set) public var errorMin: Double? = nil
     
-    init?(json: [String: Any]?) throws {
+    init(json: [String: Any]?) throws {
         guard let _name = json?["name"] as? String else {
             throw SerializationError.missing("name")
         }
@@ -24,23 +25,21 @@ public struct Flux {
             throw SerializationError.missing("value")
         }
 
-        guard let _errorMin = json?["error_max"] as? Double else {
-            throw SerializationError.missing("error_max")
-        }
-
-        guard let _errorMax = json?["error_min"] as? Double else {
-            throw SerializationError.missing("error_min")
-        }
-
         guard let _bibcode = json?["bibcode"] as? String else {
             throw SerializationError.missing("bibcode")
         }
 
         self.name = _name
         self.value = _value
-        self.errorMax = _errorMax
-        self.errorMin = _errorMin
         self.bibcode = _bibcode
+        
+        if let _errorMax = json?["error_max"] as? Double {
+            self.errorMax = _errorMax
+        }
+
+        if let _errorMin = json?["error_min"] as? Double {
+            self.errorMin = _errorMin
+        }
     }
 }
 

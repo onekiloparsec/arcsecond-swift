@@ -10,11 +10,11 @@ import Foundation
 
 public struct AstronomicalObject {
     public let name: String
-//    public let coordinates: Coordinates
+    public let coordinates: Coordinates
     public let aliases: [Alias]
     public let fluxes: [Flux]
     
-    init?(json: [String: Any]?) throws {
+    init(json: [String: Any]?) throws {
         guard let _name = json?["name"] as? String else {
             throw SerializationError.missing("name")
         }
@@ -25,10 +25,7 @@ public struct AstronomicalObject {
         
         var _aliases: [Alias] = []
         for _alias in _aliasesJSON {
-            guard let alias = try Alias(json: _alias) else {
-                throw SerializationError.invalid("aliases", _alias)
-            }
-            _aliases.append(alias)
+            _aliases.append(try Alias(json: _alias))
         }
 
         guard let _fluxesJSON = json?["fluxes"] as? [[String: Any]] else {
@@ -37,19 +34,13 @@ public struct AstronomicalObject {
         
         var _fluxes: [Flux] = []
         for _flux in _fluxesJSON {
-            guard let flux = try Flux(json: _flux) else {
-                throw SerializationError.invalid("fluxes", _flux)
-            }
-            _fluxes.append(flux)
+            _fluxes.append(try Flux(json: _flux))
         }
 
         self.name = _name
         self.aliases = _aliases
         self.fluxes = _fluxes
-     
-//        guard case self.coordinates = Coordinates(json: json?["coordinates"] as? [String: Any]) else {
-//            throw SerializationError.missing("coordinates")
-//        }        
+        self.coordinates = try Coordinates(json: json?["coordinates"] as? [String: Any])
     }
 }
 

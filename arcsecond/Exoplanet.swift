@@ -11,7 +11,7 @@ import Foundation
 public struct Exoplanet {
     public let name: String
 
-    init?(json: [String: Any]?) throws {
+    init(json: [String: Any]?) throws {
         guard let aname = json?["name"] as? String else {
             throw SerializationError.missing("name")
         }
