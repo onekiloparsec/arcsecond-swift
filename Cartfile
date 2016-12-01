@@ -1,3 +1,4 @@
-github "bustoutsolutions/siesta" "1.0-rc.0"
+github "realm/realm-cocoa"
+github "bustoutsolutions/siesta" ~> 1.0
 github "mxcl/PromiseKit" ~> 4.0
 
