@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import RealmSwift
 
-public struct Coordinates {
-    public let system: String
+public class Coordinates: Object {
+    public dynamic var system: String = ""
+}
+
 //    public let rightAscension: Double
 //    public let rightAscensionUnits: String
 //    public let declination: Double
@@ -17,12 +20,12 @@ public struct Coordinates {
 //    public let epoch: Double
 //    public let equinox: Double
     
-    init(json: [String: Any]?) throws {
-        guard let _system = json?["system"] as? String else {
-            throw SerializationError.missing("system")
-        }
-        
-        self.system = _system
+//    init(json: [String: Any]?) throws {
+//        guard let _system = json?["system"] as? String else {
+//            throw SerializationError.missing("system")
+//        }
+//        
+//        self.system = _system
 
 //        guard let _rightAscension = json?["right_ascension"] as? Double,
 //            let _declination = json?["declination"] as? Double
@@ -85,6 +88,5 @@ public struct Coordinates {
 //        else {
 //            self.equinox = StandardEpoch_J2000_0
 //        }
-    }
-}
+//    }
 

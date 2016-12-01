@@ -15,13 +15,16 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        _ = Arcsecond.object("HD 5980").then { object in
+        _ = Arcsecond.object("BAT99 129").then { object -> Void in
             Swift.print("--> Just received an object: \(object)")
+            try! Arcsecond.save(object)
+            Swift.print(Arcsecond.objects())
         }
         
-        _ = Arcsecond.exoplanet("51 Peg b").then { exoplanet in
-            Swift.print("--> Just received an exoplanet: \(exoplanet)")
-        }
+        
+//        _ = Arcsecond.exoplanet("51 Peg b").then { exoplanet in
+//            Swift.print("--> Just received an exoplanet: \(exoplanet)")
+//        }
     }
 }
 

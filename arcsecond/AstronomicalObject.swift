@@ -7,40 +7,28 @@
 //
 
 import Foundation
+import RealmSwift
 
-public struct AstronomicalObject {
-    public let name: String
-    public let coordinates: Coordinates
-    public let aliases: [Alias]
-    public let fluxes: [Flux]
+func AstronomicalObjectValidator(json: [String: Any]) throws -> [String: Any] {
+    guard json["name"] as? String != nil else {
+        throw SerializationError.missing("name")
+    }
     
-    init(json: [String: Any]?) throws {
-        guard let _name = json?["name"] as? String else {
-            throw SerializationError.missing("name")
-        }
-        
-        guard let _aliasesJSON = json?["aliases"] as? [[String: Any]] else {
-            throw SerializationError.missing("aliases")
-        }
-        
-        var _aliases: [Alias] = []
-        for _alias in _aliasesJSON {
-            _aliases.append(try Alias(json: _alias))
-        }
+    guard json["aliases"] as? [[String: Any]] != nil else {
+        throw SerializationError.missing("aliases")
+    }
+    
+    return json
+}
 
-        guard let _fluxesJSON = json?["fluxes"] as? [[String: Any]] else {
-            throw SerializationError.missing("fluxes")
-        }
-        
-        var _fluxes: [Flux] = []
-        for _flux in _fluxesJSON {
-            _fluxes.append(try Flux(json: _flux))
-        }
-
-        self.name = _name
-        self.aliases = _aliases
-        self.fluxes = _fluxes
-        self.coordinates = try Coordinates(json: json?["coordinates"] as? [String: Any])
+public class AstronomicalObject: Object {    
+    dynamic var name: String = ""
+    dynamic var coordinates: Coordinates?
+    public let aliases = List<Alias>()
+    public let fluxes = List<Flux>()
+    
+    public override class func primaryKey() -> String? {
+        return "name"
     }
 }
 

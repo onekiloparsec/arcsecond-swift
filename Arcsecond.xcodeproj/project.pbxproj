@@ -16,6 +16,7 @@
 		9F0762B31D09F80C00BEE18E /* Siesta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F07629B1D09ED8300BEE18E /* Siesta.framework */; };
 		9F0762B51D09F82200BEE18E /* Arcsecond.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F0762B61D09F82200BEE18E /* Siesta.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9F07629B1D09ED8300BEE18E /* Siesta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F25FB121DEB825B0042495B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F25FB111DEB825B0042495B /* RealmSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		9F6800221D5B519E009CF070 /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800211D5B519E009CF070 /* AstronomicalObject.swift */; };
 		9F6800241D5B5214009CF070 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800231D5B5214009CF070 /* Alias.swift */; };
 		9F6800261D5B5287009CF070 /* Exoplanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800251D5B5287009CF070 /* Exoplanet.swift */; };
@@ -36,6 +37,11 @@
 		9FACBD711D8560E7003F97F9 /* Telegram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FACBD701D8560E7003F97F9 /* Telegram.swift */; };
 		9FBFE26F1B79D12B00E98B40 /* Arcsecond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */; };
 		9FBFE2761B79D12B00E98B40 /* arcsecondTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFE2751B79D12B00E98B40 /* arcsecondTests.swift */; };
+		9FF1F7C81DED602C009498D5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F25FB111DEB825B0042495B /* RealmSwift.framework */; };
+		9FF1F7C91DED602C009498D5 /* RealmSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9F25FB111DEB825B0042495B /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FF1F7CB1DED608D009498D5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF1F7CA1DED608D009498D5 /* Realm.framework */; };
+		9FF1F7CC1DED6098009498D5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF1F7CA1DED608D009498D5 /* Realm.framework */; };
+		9FF1F7CD1DED6098009498D5 /* Realm.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF1F7CA1DED608D009498D5 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +70,9 @@
 			files = (
 				9F0762B51D09F82200BEE18E /* Arcsecond.framework in Copy Frameworks */,
 				9F0762B61D09F82200BEE18E /* Siesta.framework in Copy Frameworks */,
+				9FF1F7C91DED602C009498D5 /* RealmSwift.framework in Copy Frameworks */,
 				9FACBD6D1D8536D9003F97F9 /* PromiseKit.framework in Copy Frameworks */,
+				9FF1F7CD1DED6098009498D5 /* Realm.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +97,7 @@
 		9F0762A71D09F1BC00BEE18E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F0762AA1D09F1BC00BEE18E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F0762AC1D09F1BC00BEE18E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F25FB111DEB825B0042495B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		9F6800211D5B519E009CF070 /* AstronomicalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
 		9F6800231D5B5214009CF070 /* Alias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
 		9F6800251D5B5287009CF070 /* Exoplanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exoplanet.swift; sourceTree = "<group>"; };
@@ -113,6 +122,7 @@
 		9FBFE26E1B79D12B00E98B40 /* ArcsecondTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcsecondTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBFE2741B79D12B00E98B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FBFE2751B79D12B00E98B40 /* arcsecondTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arcsecondTests.swift; sourceTree = "<group>"; };
+		9FF1F7CA1DED608D009498D5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +132,9 @@
 			files = (
 				9F0762B31D09F80C00BEE18E /* Siesta.framework in Frameworks */,
 				9F0762B21D09F20700BEE18E /* Arcsecond.framework in Frameworks */,
+				9FF1F7C81DED602C009498D5 /* RealmSwift.framework in Frameworks */,
 				9FACBD6C1D8536D9003F97F9 /* PromiseKit.framework in Frameworks */,
+				9FF1F7CC1DED6098009498D5 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +149,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF1F7CB1DED608D009498D5 /* Realm.framework in Frameworks */,
 				9FACBD6B1D8536D1003F97F9 /* PromiseKit.framework in Frameworks */,
 				9F07629C1D09ED8300BEE18E /* Siesta.framework in Frameworks */,
+				9F25FB121DEB825B0042495B /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +170,8 @@
 		952E6F10C33274A6B41DFC89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FF1F7CA1DED608D009498D5 /* Realm.framework */,
+				9F25FB111DEB825B0042495B /* RealmSwift.framework */,
 				9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */,
 				9F07629B1D09ED8300BEE18E /* Siesta.framework */,
 			);
@@ -712,7 +728,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -737,7 +753,7 @@
 				PRODUCT_NAME = Arcsecond;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};

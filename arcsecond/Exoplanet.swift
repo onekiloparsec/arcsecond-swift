@@ -7,20 +7,26 @@
 //
 
 import Foundation
+import RealmSwift
 
-public struct Exoplanet {
-    public let name: String
+public class Exoplanet: Object {
+    public dynamic var name: String = ""
+    
+    public override class func primaryKey() -> String? {
+        return "name"
+    }
+    
 
-    init(json: [String: Any]?) throws {
-        guard let aname = json?["name"] as? String else {
-            throw SerializationError.missing("name")
-        }
-        
-        self.name = aname
-        
+//    init(json: [String: Any]?) throws {
+//        guard let aname = json?["name"] as? String else {
+//            throw SerializationError.missing("name")
+//        }
+//        
+//        self.name = aname
+    
         //        guard case self.coordinates = Coordinates(json: json?["coordinates"] as? [String: Any]) else {
         //            throw SerializationError.missing("coordinates")
         //        }
-    }
+//    }
 }
 
