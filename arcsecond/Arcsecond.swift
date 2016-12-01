@@ -10,12 +10,10 @@ import Foundation
 import PromiseKit
 import RealmSwift
 
+// Singles
+
 public func object(_ name: String) -> Promise<AstronomicalObject> {
     return ArcsecondService.sharedDefault.object(name)
-}
-
-public func objects() -> Results<AstronomicalObject> {
-    return ArcsecondService.sharedDefault.objects()
 }
 
 public func exoplanet(_ name: String) -> Promise<Exoplanet> {
@@ -25,3 +23,15 @@ public func exoplanet(_ name: String) -> Promise<Exoplanet> {
 public func save(_ obj: Object) throws {
     try ArcsecondService.sharedDefault.save(obj)
 }
+
+
+// Collections
+
+public func objects() -> Results<AstronomicalObject> {
+    return ArcsecondService.sharedDefault.objects()
+}
+
+public func exoplanets() -> Results<Exoplanet> {
+    return ArcsecondService.sharedDefault.exoplanets()
+}
+

@@ -14,10 +14,6 @@ import Realm
 
 public class ArcsecondService : Service {
     public let APIVersion: String
-    
-    public var exoplanets: Resource { return self.resource("/\(self.APIVersion)/exoplanets/") }
-    public var observingSites: Resource { return self.resource("/\(self.APIVersion)/observingsites/") }
-    
     public static let sharedDefault: ArcsecondService = { return ArcsecondService() }()
     
     private let realmConfiguration: Realm.Configuration
@@ -50,11 +46,20 @@ public class ArcsecondService : Service {
             realm.add(obj, update: (obj.realm != nil))
         }
     }
+
+    // Collections
     
     public func objects() -> Results<AstronomicalObject> {
         let realm = try! Realm(configuration: self.realmConfiguration)
         return realm.objects(AstronomicalObject.self)
     }
+    
+    public func exoplanets() -> Results<Exoplanet> {
+        let realm = try! Realm(configuration: self.realmConfiguration)
+        return realm.objects(Exoplanet.self)
+    }
+
+    // Singles
         
     public func object(_ name: String) -> Promise<AstronomicalObject> {
         return self.namedObjectPromise(name, path: "objects") as Promise<AstronomicalObject>
