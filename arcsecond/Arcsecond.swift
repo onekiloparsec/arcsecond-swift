@@ -27,7 +27,7 @@ public func save(_ obj: Object) throws {
 
 // Collections
 
-public func objects() -> Results<AstronomicalObject> {
+public func objects() -> Promise<[AstronomicalObject]> {
     return ArcsecondService.sharedDefault.objects()
 }
 

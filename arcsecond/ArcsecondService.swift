@@ -41,22 +41,48 @@ public class ArcsecondService : Service {
     }
     
     public func save(_ obj: Object) throws {
+        guard obj.realm == nil else {
+            // This doesn't mean the object is already recorded! Hence, this won't return and will cresh on realm.add()
+            // nonetheless with message: "Can't create object with existing primary key value 'BAT99 129'" ???
+            return
+        }
         let realm = try! Realm(configuration: self.realmConfiguration)
         try realm.write {
-            realm.add(obj, update: (obj.realm != nil))
+            realm.add(obj, update: false)
         }
     }
 
     // Collections
     
-    public func objects() -> Results<AstronomicalObject> {
+    public func localObjects() -> Results<AstronomicalObject> {
         let realm = try! Realm(configuration: self.realmConfiguration)
         return realm.objects(AstronomicalObject.self)
     }
-    
+
+    public func objects() -> Promise<[AstronomicalObject]> {
+        return self.collectionPromise("objects") as Promise<[AstronomicalObject]>
+    }
+
     public func exoplanets() -> Results<Exoplanet> {
         let realm = try! Realm(configuration: self.realmConfiguration)
         return realm.objects(Exoplanet.self)
+    }
+    
+    private func collectionPromise<T: Object>(_ path: String) -> Promise<[T]> {
+        return Promise { fulfill, reject in
+            let resource = self.resource("/\(self.APIVersion)/\(path)/")
+            resource.addObserver(owner: self) { resource, event in
+                if case .newData = event {
+                    let objs = resource.latestData!.content as! [T]
+                    objs.forEach { try! self.save($0) }
+                    fulfill(objs)
+                }
+                else if case .error = event {
+                    reject(resource.latestError!)
+                }
+            }
+            resource.loadIfNeeded()
+        }
     }
 
     // Singles

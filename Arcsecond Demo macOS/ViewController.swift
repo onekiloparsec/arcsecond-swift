@@ -8,6 +8,7 @@
 
 import Cocoa
 import Arcsecond
+import RealmSwift
 
 class ViewController: NSViewController {
     @IBOutlet weak var nameLabel, favoriteColorLabel: NSTextField!
@@ -17,7 +18,36 @@ class ViewController: NSViewController {
 
         _ = Arcsecond.object("BAT99 129").then { object -> Void in
             Swift.print("--> Just received an object: \(object)")
-            try! Arcsecond.save(object)
+            do  {
+             try Arcsecond.save(object)
+            }
+            catch Realm.Error.fail {
+                Swift.print("file exists")
+            }
+            catch Realm.Error.fileAccess {
+                Swift.print("file exists")
+            }
+            catch Realm.Error.filePermissionDenied {
+                Swift.print("file exists")
+            }
+            catch Realm.Error.fileExists {
+                Swift.print("file exists")
+            }
+            catch Realm.Error.fileNotFound {
+                Swift.print("file exists")
+            }
+            catch Realm.Error.incompatibleLockFile {
+                Swift.print("file exists")
+            }
+            catch Realm.Error.fileFormatUpgradeRequired {
+                Swift.print("file exists")
+            }
+            catch Realm.Error.addressSpaceExhausted {
+                Swift.print("file exists")
+            }
+            catch Realm.Error.schemaMismatch {
+                Swift.print("file exists")
+            }
             Swift.print(Arcsecond.objects())
         }
         
