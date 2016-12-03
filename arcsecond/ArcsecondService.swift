@@ -52,36 +52,17 @@ public class ArcsecondService : Service {
         }
     }
 
-    // Collections
+    // Auth
     
-    public func localObjects() -> Results<AstronomicalObject> {
-        let realm = try! Realm(configuration: self.realmConfiguration)
-        return realm.objects(AstronomicalObject.self)
-    }
-
-    public func objects() -> Promise<[AstronomicalObject]> {
-        return self.collectionPromise("objects") as Promise<[AstronomicalObject]>
-    }
-
-    public func exoplanets() -> Results<Exoplanet> {
-        let realm = try! Realm(configuration: self.realmConfiguration)
-        return realm.objects(Exoplanet.self)
-    }
-    
-    private func collectionPromise<T: Object>(_ path: String) -> Promise<[T]> {
+    public func login(username: String, password: String) -> Promise<[String: Any]> {
         return Promise { fulfill, reject in
-            let resource = self.resource("/\(self.APIVersion)/\(path)/")
-            resource.addObserver(owner: self) { resource, event in
-                if case .newData = event {
-                    let objs = resource.latestData!.content as! [T]
-                    objs.forEach { try! self.save($0) }
-                    fulfill(objs)
+            self.resource("/auth/login/").request(.post, json: ["username": username, "password": password])
+                .onSuccess{ tokenDict in
+                    fulfill(tokenDict.jsonDict)
                 }
-                else if case .error = event {
-                    reject(resource.latestError!)
+                .onFailure { error in
+                    reject(error)
                 }
-            }
-            resource.loadIfNeeded()
         }
     }
 
@@ -103,6 +84,39 @@ public class ArcsecondService : Service {
                     let obj = resource.latestData!.content as! T
                     if (obj.realm != nil) { try! self.save(obj) }
                     fulfill(obj)
+                }
+                else if case .error = event {
+                    reject(resource.latestError!)
+                }
+            }
+            resource.loadIfNeeded()
+        }
+    }
+    
+    // Collections
+    
+    public func localObjects() -> Results<AstronomicalObject> {
+        let realm = try! Realm(configuration: self.realmConfiguration)
+        return realm.objects(AstronomicalObject.self)
+    }
+    
+    public func objects() -> Promise<[AstronomicalObject]> {
+        return self.collectionPromise("objects") as Promise<[AstronomicalObject]>
+    }
+    
+    public func exoplanets() -> Results<Exoplanet> {
+        let realm = try! Realm(configuration: self.realmConfiguration)
+        return realm.objects(Exoplanet.self)
+    }
+    
+    private func collectionPromise<T: Object>(_ path: String) -> Promise<[T]> {
+        return Promise { fulfill, reject in
+            let resource = self.resource("/\(self.APIVersion)/\(path)/")
+            resource.addObserver(owner: self) { resource, event in
+                if case .newData = event {
+                    let objs = resource.latestData!.content as! [T]
+                    objs.forEach { try! self.save($0) }
+                    fulfill(objs)
                 }
                 else if case .error = event {
                     reject(resource.latestError!)

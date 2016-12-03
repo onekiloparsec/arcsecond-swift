@@ -10,6 +10,12 @@ import Foundation
 import PromiseKit
 import RealmSwift
 
+// Auth
+
+public func login(username: String, password: String) -> Promise<[String: Any]> {
+    return ArcsecondService.sharedDefault.login(username: username, password: password)
+}
+
 // Singles
 
 public func object(_ name: String) -> Promise<AstronomicalObject> {
