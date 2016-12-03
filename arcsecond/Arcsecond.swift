@@ -16,6 +16,10 @@ public func login(username: String, password: String) -> Promise<[String: Any]> 
     return ArcsecondService.sharedDefault.login(username: username, password: password)
 }
 
+public func logout() -> Promise<[String: Any]> {
+    return ArcsecondService.sharedDefault.logout()
+}
+
 // Singles
 
 public func object(_ name: String) -> Promise<AstronomicalObject> {

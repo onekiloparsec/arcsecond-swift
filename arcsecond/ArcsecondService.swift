@@ -66,6 +66,18 @@ public class ArcsecondService : Service {
         }
     }
 
+    public func logout() -> Promise<[String: Any]> {
+        return Promise { fulfill, reject in
+            self.resource("/auth/logout/").request(.post)
+                .onSuccess{ tokenDict in
+                    fulfill(tokenDict.jsonDict)
+                }
+                .onFailure { error in
+                    reject(error)
+            }
+        }
+    }
+    
     // Singles
         
     public func object(_ name: String) -> Promise<AstronomicalObject> {
