@@ -7,41 +7,33 @@
 //
 
 import Foundation
-import PromiseKit
 import RealmSwift
+import Siesta
 
 // Auth
 
-public func login(username: String, password: String) -> Promise<[String: Any]> {
+public func login(username: String, password: String) -> Siesta.Request {
     return ArcsecondService.sharedDefault.login(username: username, password: password)
 }
 
-public func logout() -> Promise<[String: Any]> {
+public func logout() -> Siesta.Request {
     return ArcsecondService.sharedDefault.logout()
 }
 
 // Singles
 
-public func object(_ name: String) -> Promise<AstronomicalObject> {
-    return ArcsecondService.sharedDefault.object(name)
-}
-
-public func exoplanet(_ name: String) -> Promise<Exoplanet> {
-    return ArcsecondService.sharedDefault.exoplanet(name)
-}
-
-public func save(_ obj: Object) throws {
-    try ArcsecondService.sharedDefault.save(obj)
+public func objectResource(named name: String, closure: @escaping AstronomicalObjectResourceClosure) -> Siesta.Resource {
+    return ArcsecondService.sharedDefault.objectResource(named: name, closure: closure)
 }
 
 
 // Collections
 
-public func objects() -> Promise<[AstronomicalObject]> {
-    return ArcsecondService.sharedDefault.objects()
-}
-
-public func exoplanets() -> Results<Exoplanet> {
-    return ArcsecondService.sharedDefault.exoplanets()
-}
+//public func objects() -> Results<[AstronomicalObject]> {
+//    return ArcsecondService.sharedDefault.objects()
+//}
+//
+//public func exoplanets() -> Results<Exoplanet> {
+//    return ArcsecondService.sharedDefault.exoplanets()
+//}
 

@@ -30,9 +30,6 @@
 		9F8BF1CF1B7F1FDC006D233A /* Arcsecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BF1CE1B7F1FDC006D233A /* Arcsecond.swift */; };
 		9F9896011D85E73300060502 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9896001D85E73300060502 /* Coordinates.swift */; };
 		9F9896031D85EA8600060502 /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9896021D85EA8600060502 /* Flux.swift */; };
-		9FACBD6B1D8536D1003F97F9 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */; };
-		9FACBD6C1D8536D9003F97F9 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */; };
-		9FACBD6D1D8536D9003F97F9 /* PromiseKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FACBD6F1D8560B6003F97F9 /* ArcsecondService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FACBD6E1D8560B6003F97F9 /* ArcsecondService.swift */; };
 		9FACBD711D8560E7003F97F9 /* Telegram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FACBD701D8560E7003F97F9 /* Telegram.swift */; };
 		9FBFE26F1B79D12B00E98B40 /* Arcsecond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */; };
@@ -71,7 +68,6 @@
 				9F0762B51D09F82200BEE18E /* Arcsecond.framework in Copy Frameworks */,
 				9F0762B61D09F82200BEE18E /* Siesta.framework in Copy Frameworks */,
 				9FF1F7C91DED602C009498D5 /* RealmSwift.framework in Copy Frameworks */,
-				9FACBD6D1D8536D9003F97F9 /* PromiseKit.framework in Copy Frameworks */,
 				9FF1F7CD1DED6098009498D5 /* Realm.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -113,7 +109,6 @@
 		9F8BF1CE1B7F1FDC006D233A /* Arcsecond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arcsecond.swift; sourceTree = "<group>"; };
 		9F9896001D85E73300060502 /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		9F9896021D85EA8600060502 /* Flux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flux.swift; sourceTree = "<group>"; };
-		9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
 		9FACBD6E1D8560B6003F97F9 /* ArcsecondService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcsecondService.swift; sourceTree = "<group>"; };
 		9FACBD701D8560E7003F97F9 /* Telegram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Telegram.swift; sourceTree = "<group>"; };
 		9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Arcsecond.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +128,6 @@
 				9F0762B31D09F80C00BEE18E /* Siesta.framework in Frameworks */,
 				9F0762B21D09F20700BEE18E /* Arcsecond.framework in Frameworks */,
 				9FF1F7C81DED602C009498D5 /* RealmSwift.framework in Frameworks */,
-				9FACBD6C1D8536D9003F97F9 /* PromiseKit.framework in Frameworks */,
 				9FF1F7CC1DED6098009498D5 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,7 +144,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FF1F7CB1DED608D009498D5 /* Realm.framework in Frameworks */,
-				9FACBD6B1D8536D1003F97F9 /* PromiseKit.framework in Frameworks */,
 				9F07629C1D09ED8300BEE18E /* Siesta.framework in Frameworks */,
 				9F25FB121DEB825B0042495B /* RealmSwift.framework in Frameworks */,
 			);
@@ -172,7 +165,6 @@
 			children = (
 				9FF1F7CA1DED608D009498D5 /* Realm.framework */,
 				9F25FB111DEB825B0042495B /* RealmSwift.framework */,
-				9FACBD6A1D8536D1003F97F9 /* PromiseKit.framework */,
 				9F07629B1D09ED8300BEE18E /* Siesta.framework */,
 			);
 			name = Frameworks;

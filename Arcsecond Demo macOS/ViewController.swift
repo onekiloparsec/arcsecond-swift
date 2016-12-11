@@ -17,51 +17,20 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        _ = Arcsecond.object("BAT99 129").then { object -> Void in
-//            Swift.print("--> Just received an object: \(object)")
-//            do  {
-//             try Arcsecond.save(object)
-//            }
-//            catch Realm.Error.fail {
-//                Swift.print("file exists")
-//            }
-//            catch Realm.Error.fileAccess {
-//                Swift.print("file exists")
-//            }
-//            catch Realm.Error.filePermissionDenied {
-//                Swift.print("file exists")
-//            }
-//            catch Realm.Error.fileExists {
-//                Swift.print("file exists")
-//            }
-//            catch Realm.Error.fileNotFound {
-//                Swift.print("file exists")
-//            }
-//            catch Realm.Error.incompatibleLockFile {
-//                Swift.print("file exists")
-//            }
-//            catch Realm.Error.fileFormatUpgradeRequired {
-//                Swift.print("file exists")
-//            }
-//            catch Realm.Error.addressSpaceExhausted {
-//                Swift.print("file exists")
-//            }
-//            catch Realm.Error.schemaMismatch {
-//                Swift.print("file exists")
-//            }
-//            Swift.print(Arcsecond.objects())
-//        }
-        
-        
-//        _ = Arcsecond.exoplanet("51 Peg b").then { exoplanet in
-//            Swift.print("--> Just received an exoplanet: \(exoplanet)")
-//        }
+        _ = Arcsecond.objectResource(named: "BAT99 128") { object, event in
+            print("\(event)")
+            print("\(object)")
+        }
     }
     
     @IBAction func login(_ sender: Any) {
-        _ = Arcsecond.login(username: self.usernameField.stringValue, password: self.passwordField.stringValue).then { result in
-            print(result)
-        }
+        _ = Arcsecond.login(username: self.usernameField.stringValue, password: self.passwordField.stringValue)
+            .onFailure({ error in
+                print(error)
+            })
+        .onSuccess({ entity in
+            print(entity)
+        })        
     }
 }
 

@@ -27,7 +27,7 @@ public class AstronomicalObject: Object {
     public let aliases = List<Alias>()
     public let fluxes = List<Flux>()
     
-    public override class func primaryKey() -> String? {
+    override public static func primaryKey() -> String? {
         return "name"
     }
 }
