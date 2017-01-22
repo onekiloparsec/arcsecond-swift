@@ -16,6 +16,7 @@
 		9F0762B31D09F80C00BEE18E /* Siesta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F07629B1D09ED8300BEE18E /* Siesta.framework */; };
 		9F0762B51D09F82200BEE18E /* Arcsecond.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F0762B61D09F82200BEE18E /* Siesta.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9F07629B1D09ED8300BEE18E /* Siesta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F0B67791E33D0FB00733034 /* ObservingSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0B67781E33D0FB00733034 /* ObservingSite.swift */; };
 		9F25FB121DEB825B0042495B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F25FB111DEB825B0042495B /* RealmSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		9F6800221D5B519E009CF070 /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800211D5B519E009CF070 /* AstronomicalObject.swift */; };
 		9F6800241D5B5214009CF070 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6800231D5B5214009CF070 /* Alias.swift */; };
@@ -93,11 +94,13 @@
 		9F0762A71D09F1BC00BEE18E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F0762AA1D09F1BC00BEE18E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F0762AC1D09F1BC00BEE18E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F0B67781E33D0FB00733034 /* ObservingSite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservingSite.swift; sourceTree = "<group>"; };
 		9F25FB111DEB825B0042495B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		9F6800211D5B519E009CF070 /* AstronomicalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
 		9F6800231D5B5214009CF070 /* Alias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
 		9F6800251D5B5287009CF070 /* Exoplanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exoplanet.swift; sourceTree = "<group>"; };
 		9F6CEABF1D8D56B000D00056 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9F7095411E35163B00CEED36 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		9F8BF1A91B7F1E83006D233A /* Arcsecond Demo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arcsecond Demo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8BF1AC1B7F1E83006D233A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F8BF1AD1B7F1E83006D233A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +166,7 @@
 		952E6F10C33274A6B41DFC89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F7095411E35163B00CEED36 /* SwiftyJSON.framework */,
 				9FF1F7CA1DED608D009498D5 /* Realm.framework */,
 				9F25FB111DEB825B0042495B /* RealmSwift.framework */,
 				9F07629B1D09ED8300BEE18E /* Siesta.framework */,
@@ -180,6 +184,21 @@
 				9F0762AC1D09F1BC00BEE18E /* Info.plist */,
 			);
 			path = "Arcsecond Demo macOS";
+			sourceTree = "<group>";
+		};
+		9F0B67771E33D0E300733034 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9F6800231D5B5214009CF070 /* Alias.swift */,
+				9F6800211D5B519E009CF070 /* AstronomicalObject.swift */,
+				9F6CEABF1D8D56B000D00056 /* Constants.swift */,
+				9F9896001D85E73300060502 /* Coordinates.swift */,
+				9F6800251D5B5287009CF070 /* Exoplanet.swift */,
+				9F9896021D85EA8600060502 /* Flux.swift */,
+				9F0B67781E33D0FB00733034 /* ObservingSite.swift */,
+				9FACBD701D8560E7003F97F9 /* Telegram.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		9F8BF1AA1B7F1E83006D233A /* Arcsecond Demo iOS */ = {
@@ -233,13 +252,7 @@
 			children = (
 				9F8BF1CE1B7F1FDC006D233A /* Arcsecond.swift */,
 				9FACBD6E1D8560B6003F97F9 /* ArcsecondService.swift */,
-				9F6800211D5B519E009CF070 /* AstronomicalObject.swift */,
-				9F6800231D5B5214009CF070 /* Alias.swift */,
-				9F9896001D85E73300060502 /* Coordinates.swift */,
-				9F9896021D85EA8600060502 /* Flux.swift */,
-				9F6800251D5B5287009CF070 /* Exoplanet.swift */,
-				9FACBD701D8560E7003F97F9 /* Telegram.swift */,
-				9F6CEABF1D8D56B000D00056 /* Constants.swift */,
+				9F0B67771E33D0E300733034 /* Model */,
 				9FBFE2661B79D12B00E98B40 /* Supporting Files */,
 			);
 			name = Arcsecond;
@@ -471,6 +484,7 @@
 				9F6800241D5B5214009CF070 /* Alias.swift in Sources */,
 				9F9896011D85E73300060502 /* Coordinates.swift in Sources */,
 				9FACBD711D8560E7003F97F9 /* Telegram.swift in Sources */,
+				9F0B67791E33D0FB00733034 /* ObservingSite.swift in Sources */,
 				9F9896031D85EA8600060502 /* Flux.swift in Sources */,
 				9FACBD6F1D8560B6003F97F9 /* ArcsecondService.swift in Sources */,
 				9F6800261D5B5287009CF070 /* Exoplanet.swift in Sources */,

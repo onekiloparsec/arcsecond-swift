@@ -17,9 +17,19 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        _ = Arcsecond.objectResource(named: "BAT99 128") { object, event in
+//        _ = Arcsecond.objectResource(named: "BAT99 128") { object, event in
+//            print("\(event)")
+//            print("\(object)")
+//        }
+        
+//        _ = Arcsecond.exoplanetResource(named: "51 Peg b") { exoplanet, event in
+//            print("\(event)")
+//            print("\(exoplanet)")
+//        }
+        
+        _ = ArcsecondService.sharedLocalDefault.observingSites { sites, event in
             print("\(event)")
-            print("\(object)")
+            print("\(sites)")
         }
     }
     

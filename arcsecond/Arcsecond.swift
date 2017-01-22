@@ -26,8 +26,17 @@ public func objectResource(named name: String, closure: @escaping AstronomicalOb
     return ArcsecondService.sharedDefault.objectResource(named: name, closure: closure)
 }
 
+public func exoplanetResource(named name: String, closure: @escaping ExoplanetObjectResourceClosure) -> Siesta.Resource {
+    return ArcsecondService.sharedDefault.exoplanetResource(named: name, closure: closure)
+}
+
 
 // Collections
+
+public func observingSitesResources(closure: @escaping ObservingSitesResourceClosure) -> Siesta.Resource {
+    return ArcsecondService.sharedDefault.observingSites(closure: closure)
+}
+
 
 //public func objects() -> Results<[AstronomicalObject]> {
 //    return ArcsecondService.sharedDefault.objects()

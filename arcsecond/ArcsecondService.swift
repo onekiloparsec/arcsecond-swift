@@ -11,6 +11,12 @@ import Siesta
 import RealmSwift
 import Realm
 
+public enum ArcsecondSource: String {
+    case localhost = "http://api.lvh.me:8000"
+    case staging = "http://arcsecond-staging.herokuapp.com/api"
+    case production = "http://api.arcsecond.io"
+}
+
 public enum ArcsecondResourceEvent {
     case remote(Siesta.ResourceEvent)
     case local(Arcsecond.ArcsecondResourceEvent.StorageEvent)
@@ -20,22 +26,27 @@ public enum ArcsecondResourceEvent {
     }
 }
 
+public typealias BaseResourceClosure = (Object?, ArcsecondResourceEvent) -> ()
 public typealias AstronomicalObjectResourceClosure = (AstronomicalObject?, ArcsecondResourceEvent) -> ()
+public typealias ExoplanetObjectResourceClosure = (Exoplanet?, ArcsecondResourceEvent) -> ()
+public typealias ObservingSitesResourceClosure = ([ObservingSite]?, ArcsecondResourceEvent) -> ()
 
 public class ArcsecondService : Service {
     public let APIVersion: String
     public static let sharedDefault: ArcsecondService = { return ArcsecondService() }()
+    public static let sharedStagingDefault: ArcsecondService = { return ArcsecondService(withAPIVersion: "1", usingSource: .staging) }()
+    public static let sharedLocalDefault: ArcsecondService = { return ArcsecondService(withAPIVersion: "1", usingSource: .localhost) }()
     
     private let realmConfiguration: Realm.Configuration
     
-    public init(withAPIVersion version: String = "1") {
+    public init(withAPIVersion version: String = "1", usingSource source: ArcsecondSource = .production) {
         self.APIVersion = version
         
         let filename = "arcsecond.\(version).realm"
         let fileurl = URL(fileURLWithPath: RLMRealmPathForFile(filename), isDirectory: false)
         self.realmConfiguration = Realm.Configuration(fileURL: fileurl)
         
-        super.init(baseURL: "http://api.arcsecond.io")
+        super.init(baseURL: source.rawValue)
         
         self.configure {
             $0.expirationTime = 86400.0  // default is 30 seconds 
@@ -47,6 +58,10 @@ public class ArcsecondService : Service {
         
         self.configureTransformer("/\(self.APIVersion)/exoplanets/*") {
             Exoplanet(value: $0.content)
+        }
+        
+        self.configureTransformer("/\(self.APIVersion)/observingsites/") {
+            ($0.content as [AnyObject]).map { ObservingSite(value: $0) }
         }
     }
     
@@ -102,7 +117,68 @@ public class ArcsecondService : Service {
         return serviceResource
     }
     
+    public func exoplanetResource(named name: String, closure: @escaping ExoplanetObjectResourceClosure) -> Siesta.Resource {
+        let path = "exoplanets"
+        let serviceResource = self.resource("/\(self.APIVersion)/\(path)/\(name)")
+        
+        if let planet = self.get(named: name, ofType: Exoplanet.self) {
+            closure(planet, .local(.simpleQuery))
+        }
+        else {
+            serviceResource.addObserver(owner: self) {
+                [weak self] resource, event in
+                var planet: Exoplanet? = nil
+                
+                switch event {
+                case .newData(.network):
+                    planet = resource.latestData!.content as? Exoplanet
+                    try! self?.save(planet!)
+                default:
+                    break
+                }
+                
+                closure(planet, .remote(event))
+            }
+            serviceResource.loadIfNeeded()
+        }
+        
+        return serviceResource
+    }
+
     // Collections
+    
+    internal func getAll<T: Object>(ofType: T.Type) -> Results<T>? {
+        let realm = try! Realm(configuration: self.realmConfiguration)
+        return realm.objects(T.self)
+    }
+
+    public func observingSites(closure: @escaping ObservingSitesResourceClosure) -> Siesta.Resource {
+        let path = "observingsites"
+        let serviceResource = self.resource("/\(self.APIVersion)/\(path)/")
+
+        if let sites = self.getAll(ofType: ObservingSite.self), sites.count > 0 {
+            closure(Array(sites), .local(.simpleQuery))
+        }
+        else {
+            serviceResource.addObserver(owner: self) {
+                [weak self] resource, event in
+                var sites: [ObservingSite]? = nil
+                
+                switch event {
+                case .newData(.network):
+                    sites = resource.latestData!.content as? [ObservingSite]
+                    sites?.forEach { try! self?.save($0) }
+                default:
+                    break
+                }
+                
+                closure(sites, .remote(event))
+            }
+            serviceResource.loadIfNeeded()
+        }
+        
+        return serviceResource
+    }
     
     public func localObjects() -> Results<AstronomicalObject> {
         let realm = try! Realm(configuration: self.realmConfiguration)
