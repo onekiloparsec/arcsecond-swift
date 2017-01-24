@@ -11,10 +11,14 @@ import Siesta
 import RealmSwift
 import Realm
 
-public enum ArcsecondSource: String {
+public enum APISource: String {
     case localhost = "http://api.lvh.me:8000"
     case staging = "http://arcsecond-staging.herokuapp.com/api"
     case production = "http://api.arcsecond.io"
+}
+
+public enum APIVersion: String {
+    case one = "1"
 }
 
 public enum ArcsecondResourceEvent {
@@ -32,17 +36,17 @@ public typealias ExoplanetObjectResourceClosure = (Exoplanet?, ArcsecondResource
 public typealias ObservingSitesResourceClosure = ([ObservingSite]?, ArcsecondResourceEvent) -> ()
 
 public class ArcsecondService : Service {
-    public let APIVersion: String
+    public let version: APIVersion
     public static let sharedDefault: ArcsecondService = { return ArcsecondService() }()
-    public static let sharedStagingDefault: ArcsecondService = { return ArcsecondService(withAPIVersion: "1", usingSource: .staging) }()
-    public static let sharedLocalDefault: ArcsecondService = { return ArcsecondService(withAPIVersion: "1", usingSource: .localhost) }()
+    public static let sharedStagingDefault: ArcsecondService = { return ArcsecondService(usingVersion: .one, andSource: .staging) }()
+    public static let sharedLocalDefault: ArcsecondService = { return ArcsecondService(usingVersion: .one, andSource: .localhost) }()
     
     private let realmConfiguration: Realm.Configuration
     
-    public init(withAPIVersion version: String = "1", usingSource source: ArcsecondSource = .production) {
-        self.APIVersion = version
+    public init(usingVersion version: APIVersion = .one, andSource source: APISource = .production) {
+        self.version = version
         
-        let filename = "arcsecond.\(version).realm"
+        let filename = "arcsecond.\(version.rawValue).realm"
         let fileurl = URL(fileURLWithPath: RLMRealmPathForFile(filename), isDirectory: false)
         self.realmConfiguration = Realm.Configuration(fileURL: fileurl)
         
@@ -52,15 +56,15 @@ public class ArcsecondService : Service {
             $0.expirationTime = 86400.0  // default is 30 seconds 
         }
         
-        self.configureTransformer("/\(self.APIVersion)/objects/*") {
+        self.configureTransformer("/\(self.version.rawValue)/objects/*") {
             AstronomicalObject(value: try AstronomicalObjectValidator(json: $0.content))
         }
         
-        self.configureTransformer("/\(self.APIVersion)/exoplanets/*") {
+        self.configureTransformer("/\(self.version.rawValue)/exoplanets/*") {
             Exoplanet(value: $0.content)
         }
         
-        self.configureTransformer("/\(self.APIVersion)/observingsites/") {
+        self.configureTransformer("/\(self.version.rawValue)/observingsites/") {
             ($0.content as [AnyObject]).map { ObservingSite(value: $0) }
         }
     }
@@ -91,7 +95,7 @@ public class ArcsecondService : Service {
 
     public func objectResource(named name: String, closure: @escaping AstronomicalObjectResourceClosure) -> Siesta.Resource {
         let path = "objects"
-        let serviceResource = self.resource("/\(self.APIVersion)/\(path)/\(name)")
+        let serviceResource = self.resource("/\(self.version.rawValue)/\(path)/\(name)")
         
         if let obj = self.get(named: name, ofType: AstronomicalObject.self) {
             closure(obj, .local(.simpleQuery))
@@ -119,7 +123,7 @@ public class ArcsecondService : Service {
     
     public func exoplanetResource(named name: String, closure: @escaping ExoplanetObjectResourceClosure) -> Siesta.Resource {
         let path = "exoplanets"
-        let serviceResource = self.resource("/\(self.APIVersion)/\(path)/\(name)")
+        let serviceResource = self.resource("/\(self.version.rawValue)/\(path)/\(name)")
         
         if let planet = self.get(named: name, ofType: Exoplanet.self) {
             closure(planet, .local(.simpleQuery))
@@ -154,7 +158,7 @@ public class ArcsecondService : Service {
 
     public func observingSites(closure: @escaping ObservingSitesResourceClosure) -> Siesta.Resource {
         let path = "observingsites"
-        let serviceResource = self.resource("/\(self.APIVersion)/\(path)/")
+        let serviceResource = self.resource("/\(self.version.rawValue)/\(path)/")
 
         if let sites = self.getAll(ofType: ObservingSite.self), sites.count > 0 {
             closure(Array(sites), .local(.simpleQuery))
