@@ -23,8 +23,8 @@ func ObservingSiteValidator(json: [String: Any]) throws -> [String: Any] {
 }
 
 public class ObservingSite: Object {
-    dynamic var uuid: String = ""
-    dynamic var name: String = ""
+    public dynamic var uuid: String = ""
+    public dynamic var name: String = ""
 //    dynamic var coordinates: Coordinates?
     
     override public static func primaryKey() -> String? {
