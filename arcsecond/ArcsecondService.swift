@@ -31,8 +31,11 @@ public enum ArcsecondResourceEvent {
 }
 
 public typealias BaseResourceClosure = (Object?, ArcsecondResourceEvent) -> ()
+
 public typealias AstronomicalObjectResourceClosure = (AstronomicalObject?, ArcsecondResourceEvent) -> ()
-public typealias ExoplanetObjectResourceClosure = (Exoplanet?, ArcsecondResourceEvent) -> ()
+public typealias ExoplanetResourceClosure = (Exoplanet?, ArcsecondResourceEvent) -> ()
+public typealias ObservingSiteResourceClosure = (ObservingSite?, ArcsecondResourceEvent) -> ()
+
 public typealias ObservingSitesResourceClosure = ([ObservingSite]?, ArcsecondResourceEvent) -> ()
 
 public class ArcsecondService : Service {
@@ -63,7 +66,11 @@ public class ArcsecondService : Service {
         self.configureTransformer("/\(self.version.rawValue)/exoplanets/*") {
             Exoplanet(value: $0.content)
         }
-        
+
+        self.configureTransformer("/\(self.version.rawValue)/observingsites/*") {
+            ObservingSite(value: $0.content)
+        }
+
         self.configureTransformer("/\(self.version.rawValue)/observingsites/") {
             ($0.content as [AnyObject]).map { ObservingSite(value: $0) }
         }
@@ -93,6 +100,7 @@ public class ArcsecondService : Service {
         return realm.object(ofType: T.self, forPrimaryKey: name)
     }
 
+    @discardableResult
     public func objectResource(named name: String, closure: @escaping AstronomicalObjectResourceClosure) -> Siesta.Resource {
         let path = "objects"
         let serviceResource = self.resource("/\(self.version.rawValue)/\(path)/\(name)")
@@ -121,7 +129,8 @@ public class ArcsecondService : Service {
         return serviceResource
     }
     
-    public func exoplanetResource(named name: String, closure: @escaping ExoplanetObjectResourceClosure) -> Siesta.Resource {
+    @discardableResult
+    public func exoplanetResource(named name: String, closure: @escaping ExoplanetResourceClosure) -> Siesta.Resource {
         let path = "exoplanets"
         let serviceResource = self.resource("/\(self.version.rawValue)/\(path)/\(name)")
         
@@ -149,6 +158,36 @@ public class ArcsecondService : Service {
         return serviceResource
     }
 
+    @discardableResult
+    public func observingSiteResource(withUUID uuid: String, closure: @escaping ObservingSiteResourceClosure) -> Siesta.Resource {
+        let path = "observingsites"
+        let serviceResource = self.resource("/\(self.version.rawValue)/\(path)/\(uuid)")
+        
+        if let site = self.get(named: uuid, ofType: ObservingSite.self) {
+            closure(site, .local(.simpleQuery))
+        }
+        else {
+            serviceResource.addObserver(owner: self) {
+                [weak self] resource, event in
+                var site: ObservingSite? = nil
+                
+                switch event {
+                case .newData(.network):
+                    site = resource.latestData!.content as? ObservingSite
+                    try! self?.save(site!)
+                default:
+                    break
+                }
+                
+                closure(site, .remote(event))
+            }
+            serviceResource.loadIfNeeded()
+        }
+        
+        return serviceResource
+    }
+    
+    
     // Collections
     
     internal func getAll<T: Object>(ofType: T.Type) -> Results<T>? {
