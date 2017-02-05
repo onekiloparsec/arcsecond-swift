@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Siesta
 import Arcsecond
 import RealmSwift
 
@@ -27,14 +28,20 @@ class ViewController: NSViewController {
 //            print("\(exoplanet)")
 //        }
         
-        _ = ArcsecondService.sharedLocalDefault.observingSites { sites, event in
-            print("\(event)")
-            print("\(sites)")
+//        _ = ArcsecondService.sharedLocalDefault.observingSites { sites, event in
+//            print("\(event)")
+//            print("\(sites)")
+//        }
+
+        ArcsecondService.sharedLocalDefault.observeObservingSiteResource(withUUID: "D0B9DBD1-BD80-4EF6-95A4-FD2CFAEA65F5", observer: self) {
+            (resource, event) in
+            Swift.print("\(resource.observingSite)")
         }
     }
     
+    
     @IBAction func login(_ sender: Any) {
-        _ = Arcsecond.login(username: self.usernameField.stringValue, password: self.passwordField.stringValue)
+        Arcsecond.login(username: self.usernameField.stringValue, password: self.passwordField.stringValue)
             .onFailure({ error in
                 print(error)
             })

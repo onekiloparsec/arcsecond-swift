@@ -22,23 +22,22 @@ public func logout() -> Siesta.Request {
 
 // Singles
 
-public func objectResource(named name: String, closure: @escaping AstronomicalObjectResourceClosure) -> Siesta.Resource {
-    return ArcsecondService.sharedDefault.objectResource(named: name, closure: closure)
+public func observeObjectResource(withName name: String, observer: AnyObject, closure: @escaping Siesta.ResourceObserverClosure) {
+    return ArcsecondService.sharedDefault.observeObjectResource(withName: name, observer: observer, closure: closure)
 }
 
-public func exoplanetResource(named name: String, closure: @escaping ExoplanetResourceClosure) -> Siesta.Resource {
-    return ArcsecondService.sharedDefault.exoplanetResource(named: name, closure: closure)
+public func observeExoplanetResource(withName name: String, observer: AnyObject, closure: @escaping Siesta.ResourceObserverClosure) {
+    return ArcsecondService.sharedDefault.observeExoplanetResource(withName: name, observer: observer, closure: closure)
 }
 
-public func observingSiteResource(withUUID uuid: String, closure: @escaping ObservingSiteResourceClosure) -> Siesta.Resource {
-    return ArcsecondService.sharedDefault.observingSiteResource(withUUID: uuid, closure: closure)
+public func observeObservingSiteResource(withUUID uuid: String, observer: AnyObject, closure: @escaping Siesta.ResourceObserverClosure) {
+    return ArcsecondService.sharedDefault.observeObservingSiteResource(withUUID: uuid, observer: observer, closure: closure)
 }
-
 
 // Collections
 
-public func observingSitesResources(closure: @escaping ObservingSitesResourceClosure) -> Siesta.Resource {
-    return ArcsecondService.sharedDefault.observingSites(closure: closure)
+public func observeObservingSitesResource(observer: AnyObject, closure: @escaping Siesta.ResourceObserverClosure) {
+    return ArcsecondService.sharedDefault.observeObservingSitesResource(observer: observer, closure: closure)
 }
 
 

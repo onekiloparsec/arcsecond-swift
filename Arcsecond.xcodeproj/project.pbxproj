@@ -35,6 +35,7 @@
 		9FACBD711D8560E7003F97F9 /* Telegram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FACBD701D8560E7003F97F9 /* Telegram.swift */; };
 		9FBFE26F1B79D12B00E98B40 /* Arcsecond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFE2631B79D12B00E98B40 /* Arcsecond.framework */; };
 		9FBFE2761B79D12B00E98B40 /* arcsecondTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFE2751B79D12B00E98B40 /* arcsecondTests.swift */; };
+		9FC5DA261E4760A400A9AFA9 /* ResourceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5DA251E4760A400A9AFA9 /* ResourceHelpers.swift */; };
 		9FF1F7C81DED602C009498D5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F25FB111DEB825B0042495B /* RealmSwift.framework */; };
 		9FF1F7C91DED602C009498D5 /* RealmSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9F25FB111DEB825B0042495B /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FF1F7CB1DED608D009498D5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF1F7CA1DED608D009498D5 /* Realm.framework */; };
@@ -120,6 +121,7 @@
 		9FBFE26E1B79D12B00E98B40 /* ArcsecondTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcsecondTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBFE2741B79D12B00E98B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FBFE2751B79D12B00E98B40 /* arcsecondTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arcsecondTests.swift; sourceTree = "<group>"; };
+		9FC5DA251E4760A400A9AFA9 /* ResourceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceHelpers.swift; sourceTree = "<group>"; };
 		9FF1F7CA1DED608D009498D5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +254,7 @@
 			children = (
 				9F8BF1CE1B7F1FDC006D233A /* Arcsecond.swift */,
 				9FACBD6E1D8560B6003F97F9 /* ArcsecondService.swift */,
+				9FC5DA251E4760A400A9AFA9 /* ResourceHelpers.swift */,
 				9F0B67771E33D0E300733034 /* Model */,
 				9FBFE2661B79D12B00E98B40 /* Supporting Files */,
 			);
@@ -483,6 +486,7 @@
 				9F6800221D5B519E009CF070 /* AstronomicalObject.swift in Sources */,
 				9F6800241D5B5214009CF070 /* Alias.swift in Sources */,
 				9F9896011D85E73300060502 /* Coordinates.swift in Sources */,
+				9FC5DA261E4760A400A9AFA9 /* ResourceHelpers.swift in Sources */,
 				9FACBD711D8560E7003F97F9 /* Telegram.swift in Sources */,
 				9F0B67791E33D0FB00733034 /* ObservingSite.swift in Sources */,
 				9F9896031D85EA8600060502 /* Flux.swift in Sources */,

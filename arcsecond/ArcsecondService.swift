@@ -15,31 +15,23 @@ public enum APISource: String {
     case localhost = "http://api.lvh.me:8000"
     case staging = "http://arcsecond-staging.herokuapp.com/api"
     case production = "http://api.arcsecond.io"
+    
+    func key() -> String {
+        switch self {
+        case .localhost: return "localhost"
+        case .staging: return "staging"
+        case.production: return "production"
+        }
+    }
 }
 
 public enum APIVersion: String {
     case one = "1"
 }
 
-public enum ArcsecondResourceEvent {
-    case remote(Siesta.ResourceEvent)
-    case local(Arcsecond.ArcsecondResourceEvent.StorageEvent)
-    
-    public enum StorageEvent: String {
-        case simpleQuery
-    }
-}
-
-public typealias BaseResourceClosure = (Object?, ArcsecondResourceEvent) -> ()
-
-public typealias AstronomicalObjectResourceClosure = (AstronomicalObject?, ArcsecondResourceEvent) -> ()
-public typealias ExoplanetResourceClosure = (Exoplanet?, ArcsecondResourceEvent) -> ()
-public typealias ObservingSiteResourceClosure = (ObservingSite?, ArcsecondResourceEvent) -> ()
-
-public typealias ObservingSitesResourceClosure = ([ObservingSite]?, ArcsecondResourceEvent) -> ()
-
-public class ArcsecondService : Service {
+public class ArcsecondService: Service {
     public let version: APIVersion
+    
     public static let sharedDefault: ArcsecondService = { return ArcsecondService() }()
     public static let sharedStagingDefault: ArcsecondService = { return ArcsecondService(usingVersion: .one, andSource: .staging) }()
     public static let sharedLocalDefault: ArcsecondService = { return ArcsecondService(usingVersion: .one, andSource: .localhost) }()
@@ -49,7 +41,7 @@ public class ArcsecondService : Service {
     public init(usingVersion version: APIVersion = .one, andSource source: APISource = .production) {
         self.version = version
         
-        let filename = "arcsecond.\(version.rawValue).realm"
+        let filename = "arcsecond.\(source.key())-\(version.rawValue).realm"
         let fileurl = URL(fileURLWithPath: RLMRealmPathForFile(filename), isDirectory: false)
         self.realmConfiguration = Realm.Configuration(fileURL: fileurl)
         
@@ -70,161 +62,93 @@ public class ArcsecondService : Service {
         self.configureTransformer("/\(self.version.rawValue)/observingsites/*") {
             ObservingSite(value: $0.content)
         }
-
+        
         self.configureTransformer("/\(self.version.rawValue)/observingsites/") {
             ($0.content as [AnyObject]).map { ObservingSite(value: $0) }
         }
+
+//        self.configureTransformer("/\(self.version.rawValue)/objects/*", atStage: .model, action: .appendToExisting, description: "realm") {
+//            try! self.save($0.content)
+//        }
+
+//        self.configureTransformer("/\(self.version.rawValue)/exoplanets/*", atStage: .model, action: .appendToExisting, description: "realm") {
+//            try! self.save($0.content)
+//        }
+
+//        self.configureTransformer("/\(self.version.rawValue)/observingsites/*", atStage: .model, action: .appendToExisting, description: "realm") {
+//            try! self.save($0.content)
+//        }
+
+//        self.configureTransformer("/\(self.version.rawValue)/observingsites/", atStage: .model, action: .appendToExisting, description: "realm-collection") {
+//            ($0.content as [AnyObject]).map { try! self.save($0.content) }
+//        }
     }
     
     // Auth
     
-    public func login(username: String, password: String) -> Siesta.Request {
+    @discardableResult
+    public func login(username: String, password: String) -> Request {
         return self.resource("/auth/login/").request(.post, json: ["username": username, "password": password])
     }
 
-    public func logout() -> Siesta.Request {
+    @discardableResult
+    public func logout() -> Request {
         return self.resource("/auth/logout/").request(.post)
     }
-        
+
     // Singles
-
-    internal func save(_ obj: Object) throws {
-        let realm = try! Realm(configuration: self.realmConfiguration)
-        try realm.write {
-            realm.add(obj, update: true)
-        }
-    }
-
-    internal func get<T: Object>(named name: String, ofType: T.Type) -> T? {
-        let realm = try! Realm(configuration: self.realmConfiguration)
-        return realm.object(ofType: T.self, forPrimaryKey: name)
-    }
-
-    @discardableResult
-    public func objectResource(named name: String, closure: @escaping AstronomicalObjectResourceClosure) -> Siesta.Resource {
-        let path = "objects"
-        let serviceResource = self.resource("/\(self.version.rawValue)/\(path)/\(name)")
-        
-        if let obj = self.get(named: name, ofType: AstronomicalObject.self) {
-            closure(obj, .local(.simpleQuery))
-        }
-        else {
-            serviceResource.addObserver(owner: self) {
-                [weak self] resource, event in
-                var obj: AstronomicalObject? = nil
-                
-                switch event {
-                case .newData(.network):
-                    obj = resource.latestData!.content as? AstronomicalObject
-                    try! self?.save(obj!)
-                default:
-                    break
-                }
-                
-                closure(obj, .remote(event))
-            }
-            serviceResource.loadIfNeeded()
-        }
-
-        return serviceResource
-    }
     
-    @discardableResult
-    public func exoplanetResource(named name: String, closure: @escaping ExoplanetResourceClosure) -> Siesta.Resource {
-        let path = "exoplanets"
-        let serviceResource = self.resource("/\(self.version.rawValue)/\(path)/\(name)")
-        
-        if let planet = self.get(named: name, ofType: Exoplanet.self) {
-            closure(planet, .local(.simpleQuery))
-        }
-        else {
-            serviceResource.addObserver(owner: self) {
-                [weak self] resource, event in
-                var planet: Exoplanet? = nil
-                
-                switch event {
-                case .newData(.network):
-                    planet = resource.latestData!.content as? Exoplanet
-                    try! self?.save(planet!)
-                default:
-                    break
-                }
-                
-                closure(planet, .remote(event))
-            }
-            serviceResource.loadIfNeeded()
-        }
-        
-        return serviceResource
+    public func observeObjectResource(withName name: String, observer: AnyObject, closure: @escaping Siesta.ResourceObserverClosure)  {
+        let resource = self.resource("/\(self.version.rawValue)/objects/\(name)")
+        resource.addObserver(owner: observer, closure: closure)
+        resource.loadIfNeeded()
     }
 
-    @discardableResult
-    public func observingSiteResource(withUUID uuid: String, closure: @escaping ObservingSiteResourceClosure) -> Siesta.Resource {
-        let path = "observingsites"
-        let serviceResource = self.resource("/\(self.version.rawValue)/\(path)/\(uuid)")
-        
-        if let site = self.get(named: uuid, ofType: ObservingSite.self) {
-            closure(site, .local(.simpleQuery))
-        }
-        else {
-            serviceResource.addObserver(owner: self) {
-                [weak self] resource, event in
-                var site: ObservingSite? = nil
-                
-                switch event {
-                case .newData(.network):
-                    site = resource.latestData!.content as? ObservingSite
-                    try! self?.save(site!)
-                default:
-                    break
-                }
-                
-                closure(site, .remote(event))
-            }
-            serviceResource.loadIfNeeded()
-        }
-        
-        return serviceResource
+    public func observeExoplanetResource(withName name: String, observer: AnyObject, closure: @escaping Siesta.ResourceObserverClosure)  {
+        let resource = self.resource("/\(self.version.rawValue)/exoplanets/\(name)")
+        resource.addObserver(owner: observer, closure: closure)
+        resource.loadIfNeeded()
     }
-    
+
+    public func observeObservingSiteResource(withUUID uuid: String, observer: AnyObject, closure: @escaping Siesta.ResourceObserverClosure)  {
+        let resource = self.resource("/\(self.version.rawValue)/observingsites/\(uuid)")
+        resource.addObserver(owner: observer, closure: closure)
+        resource.loadIfNeeded()
+    }
+
     
     // Collections
     
-    internal func getAll<T: Object>(ofType: T.Type) -> Results<T>? {
-        let realm = try! Realm(configuration: self.realmConfiguration)
-        return realm.objects(T.self)
-    }
-
-    public func observingSites(closure: @escaping ObservingSitesResourceClosure) -> Siesta.Resource {
-        let path = "observingsites"
-        let serviceResource = self.resource("/\(self.version.rawValue)/\(path)/")
-
-        if let sites = self.getAll(ofType: ObservingSite.self), sites.count > 0 {
-            closure(Array(sites), .local(.simpleQuery))
-        }
-        else {
-            serviceResource.addObserver(owner: self) {
-                [weak self] resource, event in
-                var sites: [ObservingSite]? = nil
-                
-                switch event {
-                case .newData(.network):
-                    sites = resource.latestData!.content as? [ObservingSite]
-                    sites?.forEach { try! self?.save($0) }
-                default:
-                    break
-                }
-                
-                closure(sites, .remote(event))
-            }
-            serviceResource.loadIfNeeded()
-        }
-        
-        return serviceResource
+    public func observeObservingSitesResource(observer: AnyObject, closure: @escaping Siesta.ResourceObserverClosure)  {
+        let resource = self.resource("/\(self.version.rawValue)/observingsites/")
+        resource.addObserver(owner: observer, closure: closure)
+        resource.loadIfNeeded()
     }
     
     public func localObjects() -> Results<AstronomicalObject> {
         let realm = try! Realm(configuration: self.realmConfiguration)
         return realm.objects(AstronomicalObject.self)
     }
+    
+    internal func getAll<T: Object>(ofType: T.Type) -> Results<T>? {
+        let realm = try! Realm(configuration: self.realmConfiguration)
+        return realm.objects(T.self)
+    }
+
+    // Realm
+    
+    @discardableResult
+    internal func save(_ obj: ObservingSite) throws -> String {
+        let realm = try! Realm(configuration: self.realmConfiguration)
+        try realm.write {
+            realm.add(obj, update: true)
+        }
+        return obj.uuid
+    }
+    
+    internal func getObject<T: Object>(ofType: T.Type, withPrimaryKey key: String) -> T? {
+        let realm = try! Realm(configuration: self.realmConfiguration)
+        return realm.object(ofType: T.self, forPrimaryKey: key)
+    }
+
 }
