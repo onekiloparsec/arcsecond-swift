@@ -138,12 +138,12 @@ public class ArcsecondService: Service {
     // Realm
     
     @discardableResult
-    internal func save(_ obj: ObservingSite) throws -> String {
+    internal func save(_ obj: Object) throws -> Object {
         let realm = try! Realm(configuration: self.realmConfiguration)
         try realm.write {
             realm.add(obj, update: true)
         }
-        return obj.uuid
+        return obj
     }
     
     internal func getObject<T: Object>(ofType: T.Type, withPrimaryKey key: String) -> T? {
