@@ -1,5 +1,5 @@
 <h3 align="center">
-	<img src="http://onekilopars.ec/s/1kpcAstroComponents.png" width="100%" />
+	<img src="http://onekilopars.ec/s/1kpcAstroComponents.png" width="80%" />
 </h3>
 <p align="center">
 <a href="https://github.com/onekiloparsec/arcsecond.io">arcsecond.io</a> (backend) &bull;
