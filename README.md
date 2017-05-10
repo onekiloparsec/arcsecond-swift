@@ -3,8 +3,8 @@
 </h3>
 <p align="center">
 <a href="https://github.com/onekiloparsec/arcsecond.io">arcsecond.io</a> (backend) &bull;
-<b>arcsecond.swift</b> (Swift SDK) &bull;
-<a href="https://github.com/onekiloparsec/arcsecond.js">arcsecond.js</a> (JavaScript SDK) &bull; <br/>
+<b>arcsecond-swift</b> (Swift SDK) &bull;
+<a href="https://github.com/onekiloparsec/arcsecond-js">arcsecond-js</a> (JavaScript SDK) &bull; <br/>
 <a href="https://github.com/onekiloparsec/SwiftAA">SwiftAA</a> &bull;
 <a href="https://github.com/onekiloparsec/QLFits">QLFits</a> &bull;
 <a href="https://github.com/onekiloparsec/FITSImporter">FITSImporter</a> &bull; 
