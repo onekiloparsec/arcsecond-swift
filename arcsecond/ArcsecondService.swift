@@ -20,7 +20,7 @@ public enum APISource: String {
         switch self {
         case .localhost: return "localhost"
         case .staging: return "staging"
-        case.production: return "production"
+        case .production: return "production"
         }
     }
 }
