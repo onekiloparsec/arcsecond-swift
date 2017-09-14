@@ -14,7 +14,7 @@ import Realm
 public enum APISource: String {
     case localhost = "http://api.lvh.me:8000"
     case staging = "http://arcsecond-staging.herokuapp.com/api"
-    case production = "http://api.arcsecond.io"
+    case production = "https://api.arcsecond.io"
     
     func key() -> String {
         switch self {
