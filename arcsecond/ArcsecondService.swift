@@ -25,23 +25,16 @@ public enum APISource: String {
     }
 }
 
-public enum APIVersion: String {
-    case one = "1"
-}
-
 public class ArcsecondService: Service {
-    public let version: APIVersion
-    
     public static let sharedDefault: ArcsecondService = { return ArcsecondService() }()
-    public static let sharedStagingDefault: ArcsecondService = { return ArcsecondService(usingVersion: .one, andSource: .staging) }()
-    public static let sharedLocalDefault: ArcsecondService = { return ArcsecondService(usingVersion: .one, andSource: .localhost) }()
+    public static let sharedStagingDefault: ArcsecondService = { return ArcsecondService(usingSource: .staging) }()
+    public static let sharedLocalDefault: ArcsecondService = { return ArcsecondService(usingSource: .localhost) }()
     
     private let realmConfiguration: Realm.Configuration
     
-    public init(usingVersion version: APIVersion = .one, andSource source: APISource = .production) {
-        self.version = version
+    public init(usingSource source: APISource = .production) {
         
-        let filename = "arcsecond.\(source.key())-\(version.rawValue).realm"
+        let filename = "arcsecond.\(source.key()).realm"
         let fileurl = URL(fileURLWithPath: RLMRealmPathForFile(filename), isDirectory: false)
         self.realmConfiguration = Realm.Configuration(fileURL: fileurl)
         
@@ -51,35 +44,35 @@ public class ArcsecondService: Service {
             $0.expirationTime = 86400.0  // default is 30 seconds 
         }
         
-        self.configureTransformer("/\(self.version.rawValue)/objects/*") {
+        self.configureTransformer("/objects/*") {
             AstronomicalObject(value: try AstronomicalObjectValidator(json: $0.content))
         }
         
-        self.configureTransformer("/\(self.version.rawValue)/exoplanets/*") {
+        self.configureTransformer("/exoplanets/*") {
             Exoplanet(value: $0.content)
         }
 
-        self.configureTransformer("/\(self.version.rawValue)/observingsites/*") {
+        self.configureTransformer("/observingsites/*") {
             ObservingSite(value: $0.content)
         }
         
-        self.configureTransformer("/\(self.version.rawValue)/observingsites/") {
+        self.configureTransformer("/observingsites/") {
             ($0.content as [AnyObject]).map { ObservingSite(value: $0) }
         }
 
-//        self.configureTransformer("/\(self.version.rawValue)/objects/*", atStage: .model, action: .appendToExisting, description: "realm") {
+//        self.configureTransformer("/objects/*", atStage: .model, action: .appendToExisting, description: "realm") {
 //            try! self.save($0.content)
 //        }
 
-//        self.configureTransformer("/\(self.version.rawValue)/exoplanets/*", atStage: .model, action: .appendToExisting, description: "realm") {
+//        self.configureTransformer("/exoplanets/*", atStage: .model, action: .appendToExisting, description: "realm") {
 //            try! self.save($0.content)
 //        }
 
-//        self.configureTransformer("/\(self.version.rawValue)/observingsites/*", atStage: .model, action: .appendToExisting, description: "realm") {
+//        self.configureTransformer("/observingsites/*", atStage: .model, action: .appendToExisting, description: "realm") {
 //            try! self.save($0.content)
 //        }
 
-//        self.configureTransformer("/\(self.version.rawValue)/observingsites/", atStage: .model, action: .appendToExisting, description: "realm-collection") {
+//        self.configureTransformer("/observingsites/", atStage: .model, action: .appendToExisting, description: "realm-collection") {
 //            ($0.content as [AnyObject]).map { try! self.save($0.content) }
 //        }
     }
@@ -99,19 +92,19 @@ public class ArcsecondService: Service {
     // Singles
     
     public func observeObjectResource(withName name: String, observer: AnyObject, closure: @escaping Siesta.ResourceObserverClosure)  {
-        let resource = self.resource("/\(self.version.rawValue)/objects/\(name)")
+        let resource = self.resource("/objects/\(name)")
         resource.addObserver(owner: observer, closure: closure)
         resource.loadIfNeeded()
     }
 
     public func observeExoplanetResource(withName name: String, observer: AnyObject, closure: @escaping Siesta.ResourceObserverClosure)  {
-        let resource = self.resource("/\(self.version.rawValue)/exoplanets/\(name)")
+        let resource = self.resource("/exoplanets/\(name)")
         resource.addObserver(owner: observer, closure: closure)
         resource.loadIfNeeded()
     }
 
     public func observeObservingSiteResource(withUUID uuid: String, observer: AnyObject, closure: @escaping Siesta.ResourceObserverClosure)  {
-        let resource = self.resource("/\(self.version.rawValue)/observingsites/\(uuid)")
+        let resource = self.resource("/observingsites/\(uuid)")
         resource.addObserver(owner: observer, closure: closure)
         resource.loadIfNeeded()
     }
@@ -120,7 +113,7 @@ public class ArcsecondService: Service {
     // Collections
     
     public func observeObservingSitesResource(observer: AnyObject, closure: @escaping Siesta.ResourceObserverClosure)  {
-        let resource = self.resource("/\(self.version.rawValue)/observingsites/")
+        let resource = self.resource("/observingsites/")
         resource.addObserver(owner: observer, closure: closure)
         resource.loadIfNeeded()
     }
