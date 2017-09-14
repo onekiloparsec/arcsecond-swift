@@ -33,9 +33,16 @@ class ViewController: NSViewController {
 //            print("\(sites)")
 //        }
 
-        ArcsecondService.sharedLocalDefault.observeObservingSiteResource(withUUID: "D0B9DBD1-BD80-4EF6-95A4-FD2CFAEA65F5", observer: self) {
-            (resource, event) in
-            Swift.print("\(resource.observingSite)")
+//        ArcsecondService.sharedLocalDefault.observeObservingSiteResource(withUUID: "D0B9DBD1-BD80-4EF6-95A4-FD2CFAEA65F5", observer: self) {
+//            (resource, event) in
+//            Swift.print("-> \(resource.observingSite)")
+//        }
+        
+        ArcsecondService.sharedDefault.observeObservingSitesResource(observer: self) { (resource, event) in
+            if case .newData = event {
+                Swift.print("-> resources \(String(describing: resource.observingSites)), event \(event)")
+                Swift.print("-> resources \(String(describing: resource.observingSites!.first!.coordinates)), event \(event)")
+            }
         }
     }
     

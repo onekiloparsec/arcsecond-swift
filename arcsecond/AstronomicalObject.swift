@@ -23,7 +23,7 @@ func AstronomicalObjectValidator(json: [String: Any]) throws -> [String: Any] {
 
 public class AstronomicalObject: Object {    
     dynamic var name: String = ""
-    dynamic var coordinates: Coordinates?
+//    dynamic var ICRS_coordinates: ICRSCoordinates?
     public let aliases = List<Alias>()
     public let fluxes = List<Flux>()
     

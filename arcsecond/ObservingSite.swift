@@ -15,17 +15,22 @@ func ObservingSiteValidator(json: [String: Any]) throws -> [String: Any] {
         throw SerializationError.missing("uuid")
     }
     
-    guard json["name"] as? [[String: Any]] != nil else {
+    guard json["name"] as? String != nil else {
         throw SerializationError.missing("name")
     }
     
+    guard json["IAUCode"] as? String != nil else {
+        throw SerializationError.missing("IAUCode")
+    }
+
     return json
 }
 
 public class ObservingSite: Object {
     public dynamic var uuid: String = ""
     public dynamic var name: String = ""
-//    dynamic var coordinates: Coordinates?
+    public dynamic var IAUCode: String = ""
+    public dynamic var coordinates: Coordinates?
     
     override public static func primaryKey() -> String? {
         return "uuid"
