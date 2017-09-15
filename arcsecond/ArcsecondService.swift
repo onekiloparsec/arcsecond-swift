@@ -57,7 +57,7 @@ public class ArcsecondService: Service {
         }
         
         self.configureTransformer("/observingsites/") {
-            ($0.content as [AnyObject]).map { ObservingSite(value: $0) }
+            ($0.content as [JSONConvertible]).map { ObservingSite(value: try! ObservingSiteValidator(json: $0 as! [String : AnyObject])) }
         }
 
 //        self.configureTransformer("/objects/*", atStage: .model, action: .appendToExisting, description: "realm") {

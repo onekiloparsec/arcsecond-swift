@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 import Realm
 
-func ObservingSiteValidator(json: [String: Any]) throws -> [String: Any] {
+func ObservingSiteValidator(json: [String: AnyObject]) throws -> [String: AnyObject] {
     guard json["uuid"] as? String != nil else {
         throw SerializationError.missing("uuid")
     }
@@ -19,8 +19,15 @@ func ObservingSiteValidator(json: [String: Any]) throws -> [String: Any] {
         throw SerializationError.missing("name")
     }
     
-    guard json["IAUCode"] as? String != nil else {
-        throw SerializationError.missing("IAUCode")
+    guard json["coordinates"] != nil else {
+        throw SerializationError.missing("coordinates")
+    }
+
+    do {
+        try _ = CoordinatesValidator(json: json["coordinates"] as! [String : AnyObject])
+    }
+    catch {
+        throw SerializationError.invalid("coordinates", json["coordinates"]!)
     }
 
     return json
@@ -34,5 +41,5 @@ public class ObservingSite: Object {
     
     override public static func primaryKey() -> String? {
         return "uuid"
-    }    
+    }
 }

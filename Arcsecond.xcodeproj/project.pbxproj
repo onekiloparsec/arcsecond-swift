@@ -194,10 +194,10 @@
 				9F6800231D5B5214009CF070 /* Alias.swift */,
 				9F6800211D5B519E009CF070 /* AstronomicalObject.swift */,
 				9F6CEABF1D8D56B000D00056 /* Constants.swift */,
-				9F9896001D85E73300060502 /* Coordinates.swift */,
 				9F6800251D5B5287009CF070 /* Exoplanet.swift */,
 				9F9896021D85EA8600060502 /* Flux.swift */,
 				9F0B67781E33D0FB00733034 /* ObservingSite.swift */,
+				9F9896001D85E73300060502 /* Coordinates.swift */,
 				9FACBD701D8560E7003F97F9 /* Telegram.swift */,
 			);
 			name = Model;
