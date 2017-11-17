@@ -10,11 +10,11 @@ import Foundation
 import RealmSwift
 
 func CoordinatesValidator(json: [String: AnyObject]) throws -> [String: AnyObject] {
-    guard json["longitude"] as? Float != nil else {
+    guard json["longitude"] as? Double != nil else {
         throw SerializationError.missing("longitude")
     }
     
-    guard json["latitude"] as? Float != nil else {
+    guard json["latitude"] as? Double != nil else {
         throw SerializationError.missing("latitude")
     }
     
@@ -27,9 +27,9 @@ func CoordinatesValidator(json: [String: AnyObject]) throws -> [String: AnyObjec
 }
 
 public class Coordinates: Object {
-    public dynamic var longitude: Float = 0.0
-    public dynamic var latitude: Float = 0.0
-    public let height = RealmOptional<Float>()
+    public dynamic var longitude: Double = 0.0
+    public dynamic var latitude: Double = 0.0
+    public let height = RealmOptional<Double>()
 }
 
 
