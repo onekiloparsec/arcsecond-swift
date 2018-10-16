@@ -10,8 +10,8 @@ import Foundation
 import RealmSwift
 
 public class Alias: Object {
-    public dynamic var name: String = ""
-    public dynamic var catalogueURL: String = ""
+    @objc public dynamic var name: String = ""
+    @objc public dynamic var catalogueURL: String = ""
 
     public override class func primaryKey() -> String? {
         return "name"

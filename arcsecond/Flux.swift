@@ -46,12 +46,12 @@ import RealmSwift
 
 
 public class Flux: Object {
-    public dynamic var name: String = ""
-    public dynamic var value: Float = MAXFLOAT
-    public dynamic var bibcode: String = ""
+    @objc public dynamic var name: String = ""
+    @objc public dynamic var value: Float = MAXFLOAT
+    @objc public dynamic var bibcode: String = ""
 
-    public dynamic var errorMax: Float = MAXFLOAT
-    public dynamic var errorMin: Float = MAXFLOAT
+    @objc public dynamic var errorMax: Float = MAXFLOAT
+    @objc public dynamic var errorMin: Float = MAXFLOAT
 
     public override class func primaryKey() -> String? {
         return "name"

@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 public class Exoplanet: Object {
-    public dynamic var name: String = ""
+    @objc public dynamic var name: String = ""
     
     public override class func primaryKey() -> String? {
         return "name"

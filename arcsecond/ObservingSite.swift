@@ -34,10 +34,10 @@ func ObservingSiteValidator(json: [String: AnyObject]) throws -> [String: AnyObj
 }
 
 public class ObservingSite: Object {
-    public dynamic var uuid: String = ""
-    public dynamic var name: String = ""
-    public dynamic var IAUCode: String = ""
-    public dynamic var coordinates: Coordinates?
+    @objc public dynamic var uuid: String = ""
+    @objc public dynamic var name: String = ""
+    @objc public dynamic var IAUCode: String = ""
+    @objc public dynamic var coordinates: Coordinates?
     
     override public static func primaryKey() -> String? {
         return "uuid"

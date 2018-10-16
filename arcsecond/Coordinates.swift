@@ -27,8 +27,8 @@ func CoordinatesValidator(json: [String: AnyObject]) throws -> [String: AnyObjec
 }
 
 public class Coordinates: Object {
-    public dynamic var longitude: Double = 0.0
-    public dynamic var latitude: Double = 0.0
+    @objc public dynamic var longitude: Double = 0.0
+    @objc public dynamic var latitude: Double = 0.0
     public let height = RealmOptional<Double>()
 }
 
