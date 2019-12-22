@@ -134,7 +134,7 @@ public class ArcsecondService: Service {
     internal func save(_ obj: Object) throws -> Object {
         let realm = try! Realm(configuration: self.realmConfiguration)
         try realm.write {
-            realm.add(obj, update: true)
+            realm.add(obj, update: .all)
         }
         return obj
     }

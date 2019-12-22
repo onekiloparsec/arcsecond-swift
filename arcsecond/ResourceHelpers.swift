@@ -16,27 +16,27 @@ import Realm
 
 public extension TypedContentAccessors where Self: Resource {
 
-    public var astronomicalObject: AstronomicalObject? {
+    var astronomicalObject: AstronomicalObject? {
         return self.typedContent() as AstronomicalObject?
     }
 
-    public var astronomicalObjects: [AstronomicalObject]? {
+    var astronomicalObjects: [AstronomicalObject]? {
         return self.typedContent() as [AstronomicalObject]?
     }
 
-    public var exoplanet: Exoplanet? {
+    var exoplanet: Exoplanet? {
         return self.typedContent() as Exoplanet?
     }
 
-    public var exoplanets: [Exoplanet]? {
+    var exoplanets: [Exoplanet]? {
         return self.typedContent() as [Exoplanet]?
     }
 
-    public var observingSite: ObservingSite? {
+    var observingSite: ObservingSite? {
         return self.typedContent() as ObservingSite?
     }
 
-    public var observingSites: [ObservingSite]? {
+    var observingSites: [ObservingSite]? {
         return self.typedContent() as [ObservingSite]?
     }
 
